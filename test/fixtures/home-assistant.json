@@ -1,0 +1,1021 @@
+{
+  "common": {
+    "doors": {
+      "centralLock": {
+        "value": "LOCKED",
+        "timestamp": "2024-12-30T14:20:20.570Z"
+      },
+      "frontLeftDoor": {
+        "value": "CLOSED",
+        "timestamp": "2024-12-30T14:20:20.570Z"
+      },
+      "frontRightDoor": {
+        "value": "CLOSED",
+        "timestamp": "2024-12-30T14:20:20.570Z"
+      },
+      "rearLeftDoor": {
+        "value": "CLOSED",
+        "timestamp": "2024-12-30T14:20:20.570Z"
+      },
+      "rearRightDoor": {
+        "value": "CLOSED",
+        "timestamp": "2024-12-30T14:20:20.570Z"
+      },
+      "hood": {
+        "value": "CLOSED",
+        "timestamp": "2024-12-30T14:20:20.570Z"
+      },
+      "tailgate": {
+        "value": "CLOSED",
+        "timestamp": "2024-12-30T14:20:20.570Z"
+      },
+      "tankLid": {
+        "value": "CLOSED",
+        "timestamp": "2024-12-30T14:20:20.570Z"
+      }
+    },
+    "windows": {
+      "frontLeftWindow": {
+        "value": "CLOSED",
+        "timestamp": "2024-12-30T14:28:12.202Z"
+      },
+      "frontRightWindow": {
+        "value": "CLOSED",
+        "timestamp": "2024-12-30T14:28:12.202Z"
+      },
+      "rearLeftWindow": {
+        "value": "CLOSED",
+        "timestamp": "2024-12-30T14:28:12.202Z"
+      },
+      "rearRightWindow": {
+        "value": "CLOSED",
+        "timestamp": "2024-12-30T14:28:12.202Z"
+      },
+      "sunroof": {
+        "value": "UNSPECIFIED",
+        "timestamp": "2024-12-30T14:28:12.202Z"
+      }
+    },
+    "engine-status": {
+      "engineStatus": {
+        "value": "STOPPED",
+        "timestamp": "2024-12-30T15:00:00.000Z"
+      }
+    },
+    "odometer": {
+      "odometer": {
+        "value": 30000,
+        "unit": "km",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      }
+    },
+    "fuel": {
+      "fuelAmount": {
+        "value": "47.3",
+        "unit": "l",
+        "timestamp": "2020-11-19T21:23:24.123Z"
+      },
+      "batteryChargeLevel": {
+        "value": "87.3",
+        "unit": "%",
+        "timestamp": "2020-11-19T21:23:24.123Z"
+      }
+    },
+    "diagnostics": {
+      "serviceWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "engineHoursToService": {
+        "value": 1266,
+        "unit": "h",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "distanceToService": {
+        "value": 29000,
+        "unit": "km",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "washerFluidLevelWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "timeToService": {
+        "value": 23,
+        "unit": "months",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      }
+    },
+    "warnings": {
+      "brakeLightCenterWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "brakeLightLeftWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "brakeLightRightWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "fogLightFrontWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "fogLightRearWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "positionLightFrontLeftWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "positionLightFrontRightWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "positionLightRearLeftWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "positionLightRearRightWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "highBeamLeftWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "highBeamRightWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "lowBeamLeftWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "lowBeamRightWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "daytimeRunningLightLeftWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "daytimeRunningLightRightWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "turnIndicationFrontLeftWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "turnIndicationFrontRightWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "turnIndicationRearLeftWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "turnIndicationRearRightWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "registrationPlateLightWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "sideMarkLightsWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "hazardLightsWarning": {
+        "value": "UNSPECIFIED",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "reverseLightsWarning": {
+        "value": "UNSPECIFIED",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      }
+    },
+    "tyres": {
+      "frontLeft": {
+        "value": "UNSPECIFIED",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "frontRight": {
+        "value": "UNSPECIFIED",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "rearLeft": {
+        "value": "UNSPECIFIED",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "rearRight": {
+        "value": "UNSPECIFIED",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      }
+    },
+    "brakes": {
+      "brakeFluidLevelWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      }
+    },
+    "engine": {
+      "oilLevelWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      },
+      "engineCoolantLevelWarning": {
+        "value": "NO_WARNING",
+        "timestamp": "2024-12-30T14:18:56.849Z"
+      }
+    },
+    "command-accessibility": {
+      "availabilityStatus": {
+        "value": "AVAILABLE",
+        "timestamp": "2024-12-30T14:32:26.169Z"
+      }
+    },
+    "location": {
+      "type": "Feature",
+      "properties": {
+        "timestamp": "2024-12-30T15:00:00.000Z",
+        "heading": "90"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11.849843629550225, 57.72537482589284, 0.0]
+      }
+    }
+  },
+  "commands": [
+    "LOCK_REDUCED_GUARD",
+    "LOCK",
+    "UNLOCK",
+    "HONK",
+    "HONK_AND_FLASH",
+    "FLASH",
+    "CLIMATIZATION_START",
+    "CLIMATIZATION_STOP"
+  ],
+  "commandsPetrol": [
+    "LOCK_REDUCED_GUARD",
+    "LOCK",
+    "UNLOCK",
+    "HONK",
+    "HONK_AND_FLASH",
+    "FLASH",
+    "CLIMATIZATION_START",
+    "CLIMATIZATION_STOP",
+    "ENGINE_START",
+    "ENGINE_STOP"
+  ],
+  "cars": {
+    "xc40_electric_2024": {
+      "vehicle": {
+        "vin": "YV1ABCDEFG1234567",
+        "modelYear": 2024,
+        "gearbox": "AUTOMATIC",
+        "fuelType": "ELECTRIC",
+        "externalColour": "Silver Dawn",
+        "batteryCapacityKWH": 81.608,
+        "images": {
+          "exteriorImageUrl": "https://cas.volvocars.com/image/dynamic/MY24_0000/123/exterior-v4/_/default.png?market=se&client=public-api-engineering&angle=1&bg=00000000&w=1920",
+          "internalImageUrl": "https://cas.volvocars.com/image/dynamic/MY24_0000/123/interior-v4/_/default.jpg?market=se&client=public-api-engineering&angle=0&w=1920"
+        },
+        "descriptions": {
+          "model": "XC40",
+          "upholstery": "null",
+          "steering": "LEFT"
+        }
+      },
+      "statistics": {
+        "averageEnergyConsumption": {
+          "value": 22.6,
+          "unit": "kWh/100km",
+          "timestamp": "2024-12-30T14:53:44.785Z"
+        },
+        "averageSpeed": {
+          "value": 53,
+          "unit": "km/h",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "averageSpeedAutomatic": {
+          "value": 26,
+          "unit": "km/h",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "tripMeterManual": {
+          "value": 3822.9,
+          "unit": "km",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "tripMeterAutomatic": {
+          "value": 18.2,
+          "unit": "km",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "distanceToEmptyBattery": {
+          "value": 250,
+          "unit": "km",
+          "timestamp": "2024-12-30T14:30:08.338Z"
+        }
+      },
+      "energy_state": {
+        "batteryChargeLevel": {
+          "status": "OK",
+          "value": 53,
+          "unit": "percentage",
+          "updatedAt": "2025-07-02T08:51:23Z"
+        },
+        "electricRange": {
+          "status": "OK",
+          "value": 150,
+          "unit": "mi",
+          "updatedAt": "2025-07-02T08:51:23Z"
+        },
+        "chargerConnectionStatus": {
+          "status": "OK",
+          "value": "CONNECTED",
+          "updatedAt": "2025-07-02T08:51:23Z"
+        },
+        "chargingStatus": {
+          "status": "OK",
+          "value": "CHARGING",
+          "updatedAt": "2025-07-02T08:51:23Z"
+        },
+        "chargingType": {
+          "status": "OK",
+          "value": "AC",
+          "updatedAt": "2025-07-02T08:51:23Z"
+        },
+        "chargerPowerStatus": {
+          "status": "OK",
+          "value": "PROVIDING_POWER",
+          "updatedAt": "2025-07-02T08:51:23Z"
+        },
+        "estimatedChargingTimeToTargetBatteryChargeLevel": {
+          "status": "OK",
+          "value": 1440,
+          "unit": "minutes",
+          "updatedAt": "2025-07-02T08:51:23Z"
+        },
+        "chargingCurrentLimit": {
+          "status": "OK",
+          "value": 32,
+          "unit": "ampere",
+          "updatedAt": "2024-03-05T08:38:44Z"
+        },
+        "targetBatteryChargeLevel": {
+          "status": "OK",
+          "value": 90,
+          "unit": "percentage",
+          "updatedAt": "2024-09-22T09:40:12Z"
+        },
+        "chargingPower": {
+          "status": "OK",
+          "value": 1386,
+          "unit": "watts",
+          "updatedAt": "2025-07-02T08:51:23Z"
+        }
+      },
+      "energy_capabilities": {
+        "isSupported": true,
+        "batteryChargeLevel": {
+          "isSupported": true
+        },
+        "electricRange": {
+          "isSupported": true
+        },
+        "chargerConnectionStatus": {
+          "isSupported": true
+        },
+        "chargingSystemStatus": {
+          "isSupported": true
+        },
+        "chargingType": {
+          "isSupported": true
+        },
+        "chargerPowerStatus": {
+          "isSupported": true
+        },
+        "estimatedChargingTimeToTargetBatteryChargeLevel": {
+          "isSupported": true
+        },
+        "targetBatteryChargeLevel": {
+          "isSupported": true
+        },
+        "chargingCurrentLimit": {
+          "isSupported": true
+        },
+        "chargingPower": {
+          "isSupported": true
+        }
+      }
+    },
+    "xc90_phev_2024": {
+      "vehicle": {
+        "vin": "YV1ABCDEFG1234567",
+        "modelYear": 2024,
+        "gearbox": "AUTOMATIC",
+        "fuelType": "PETROL/ELECTRIC",
+        "externalColour": "Crystal White Pearl",
+        "batteryCapacityKWH": 18.819,
+        "images": {
+          "exteriorImageUrl": "https://cas.volvocars.com/image/dynamic/MY24_0000/123/_/default.png?market=se&client=public-api-engineering&angle=1&bg=00000000&w=1920",
+          "internalImageUrl": "https://cas.volvocars.com/image/dynamic/MY24_0000/123/_/default.jpg?market=se&client=public-api-engineering&angle=0&w=1920"
+        },
+        "descriptions": {
+          "model": "XC90",
+          "upholstery": "null",
+          "steering": "LEFT"
+        }
+      },
+      "statistics": {
+        "averageFuelConsumption": {
+          "value": 2.0,
+          "unit": "l/100km",
+          "timestamp": "2025-09-04T18:03:57.437Z"
+        },
+        "averageEnergyConsumption": {
+          "value": 19.9,
+          "unit": "kWh/100km",
+          "timestamp": "2025-09-04T18:03:57.437Z"
+        },
+        "averageFuelConsumptionAutomatic": {
+          "value": 0.0,
+          "unit": "l/100km",
+          "timestamp": "2025-09-04T18:03:57.437Z"
+        },
+        "averageSpeed": {
+          "value": 47,
+          "unit": "km/h",
+          "timestamp": "2025-09-04T18:03:57.437Z"
+        },
+        "averageSpeedAutomatic": {
+          "value": 37,
+          "unit": "km/h",
+          "timestamp": "2025-09-04T18:03:57.437Z"
+        },
+        "tripMeterManual": {
+          "value": 5935.8,
+          "unit": "km",
+          "timestamp": "2025-09-04T18:03:57.437Z"
+        },
+        "tripMeterAutomatic": {
+          "value": 23.7,
+          "unit": "km",
+          "timestamp": "2025-09-04T18:03:57.437Z"
+        },
+        "distanceToEmptyTank": {
+          "value": 804,
+          "unit": "km",
+          "timestamp": "2025-09-04T18:03:57.437Z"
+        },
+        "distanceToEmptyBattery": {
+          "value": 43,
+          "unit": "km",
+          "timestamp": "2025-09-05T07:58:14.760Z"
+        }
+      },
+      "energy_state": {
+        "batteryChargeLevel": {
+          "status": "OK",
+          "value": 87.3,
+          "unit": "percentage",
+          "updatedAt": "2025-09-05T07:58:14Z"
+        },
+        "electricRange": {
+          "status": "OK",
+          "value": 26,
+          "unit": "miles",
+          "updatedAt": "2025-09-05T07:58:14Z"
+        },
+        "chargerConnectionStatus": {
+          "status": "OK",
+          "value": "DISCONNECTED",
+          "updatedAt": "2025-09-05T07:58:14Z"
+        },
+        "chargingStatus": {
+          "status": "OK",
+          "value": "IDLE",
+          "updatedAt": "2025-09-05T07:58:14Z"
+        },
+        "chargingType": {
+          "status": "OK",
+          "value": "NONE",
+          "updatedAt": "2025-09-05T07:58:14Z"
+        },
+        "chargerPowerStatus": {
+          "status": "OK",
+          "value": "NO_POWER_AVAILABLE",
+          "updatedAt": "2025-09-05T07:58:14Z"
+        },
+        "estimatedChargingTimeToTargetBatteryChargeLevel": {
+          "status": "OK",
+          "value": 0,
+          "unit": "minutes",
+          "updatedAt": "2025-09-05T07:58:14Z"
+        },
+        "chargingCurrentLimit": {
+          "status": "ERROR",
+          "code": "NOT_SUPPORTED",
+          "message": "Resource is not supported for this vehicle"
+        },
+        "targetBatteryChargeLevel": {
+          "status": "ERROR",
+          "code": "ERROR_READING_PROPERTY",
+          "message": "Failed to retrieve property."
+        },
+        "chargingPower": {
+          "status": "ERROR",
+          "code": "NOT_SUPPORTED",
+          "message": "Resource is not supported for this vehicle"
+        }
+      },
+      "energy_capabilities": {
+        "isSupported": true,
+        "batteryChargeLevel": {
+          "isSupported": true
+        },
+        "electricRange": {
+          "isSupported": true
+        },
+        "chargerConnectionStatus": {
+          "isSupported": true
+        },
+        "chargingSystemStatus": {
+          "isSupported": true
+        },
+        "chargingType": {
+          "isSupported": true
+        },
+        "chargerPowerStatus": {
+          "isSupported": true
+        },
+        "estimatedChargingTimeToTargetBatteryChargeLevel": {
+          "isSupported": true
+        },
+        "targetBatteryChargeLevel": {
+          "isSupported": true
+        },
+        "chargingCurrentLimit": {
+          "isSupported": false
+        },
+        "chargingPower": {
+          "isSupported": false
+        }
+      }
+    },
+    "s90_diesel_2018": {
+      "vehicle": {
+        "vin": "YV1ABCDEFG1234567",
+        "modelYear": 2018,
+        "gearbox": "AUTOMATIC",
+        "fuelType": "DIESEL",
+        "externalColour": "Electric Silver",
+        "images": {
+          "exteriorImageUrl": "",
+          "internalImageUrl": ""
+        },
+        "descriptions": {
+          "model": "S90",
+          "upholstery": "null",
+          "steering": "RIGHT"
+        }
+      },
+      "statistics": {
+        "averageFuelConsumption": {
+          "value": 7.23,
+          "unit": "l/100km",
+          "timestamp": "2024-12-30T14:53:44.785Z"
+        },
+        "averageSpeed": {
+          "value": 53,
+          "unit": "km/h",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "averageSpeedAutomatic": {
+          "value": 26,
+          "unit": "km/h",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "distanceToEmptyTank": {
+          "value": 147,
+          "unit": "km",
+          "timestamp": "2024-12-30T14:30:08.338Z"
+        },
+        "tripMeterManual": {
+          "value": 3822.9,
+          "unit": "km",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "tripMeterAutomatic": {
+          "value": 18.2,
+          "unit": "km",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        }
+      },
+      "diagnostics": {
+        "serviceWarning": {
+          "value": "NO_WARNING",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "engineHoursToService": {
+          "value": 1266,
+          "unit": "h",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "distanceToService": {
+          "value": 29000,
+          "unit": "km",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "washerFluidLevelWarning": {
+          "value": "NO_WARNING",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "timeToService": {
+          "value": 17,
+          "unit": "days",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        }
+      }
+    },
+    "ex30_2024": {
+      "vehicle": {
+        "vin": "YV1ABCDEFG1234567",
+        "modelYear": 2024,
+        "gearbox": "AUTOMATIC",
+        "fuelType": "NONE",
+        "externalColour": "Crystal White Pearl",
+        "batteryCapacityKWH": 66.0,
+        "images": {
+          "exteriorImageUrl": "https://wizz.volvocars.com/images/2024/123/v2/exterior/studio/right/transparent_exterior-studio-right_0000000000000000000000000000000000000000.png?client=public-api-engineering&w=1920",
+          "internalImageUrl": "https://wizz.volvocars.com/images/2024/123/v2/interior/studio/side/interior-studio-side_0000000000000000000000000000000000000000.png?client=public-api-engineering&w=1920"
+        },
+        "descriptions": {
+          "model": "EX30",
+          "upholstery": "R310",
+          "steering": "LEFT"
+        }
+      },
+      "statistics": {
+        "averageEnergyConsumption": {
+          "value": 22.6,
+          "unit": "kWh/100km",
+          "timestamp": "2024-12-30T14:53:44.785Z"
+        },
+        "averageSpeed": {
+          "value": 53,
+          "unit": "km/h",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "averageSpeedAutomatic": {
+          "value": 26,
+          "unit": "km/h",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "tripMeterManual": {
+          "value": 3822.9,
+          "unit": "km",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "tripMeterAutomatic": {
+          "value": 18.2,
+          "unit": "km",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "distanceToEmptyBattery": {
+          "value": 250,
+          "unit": "km",
+          "timestamp": "2024-12-30T14:30:08.338Z"
+        }
+      },
+      "energy_state": {
+        "batteryChargeLevel": {
+          "status": "OK",
+          "value": 90.0,
+          "unit": "percentage",
+          "updatedAt": "2025-08-07T14:30:32Z"
+        },
+        "electricRange": {
+          "status": "OK",
+          "value": 327,
+          "unit": "km",
+          "updatedAt": "2025-08-07T14:30:32Z"
+        },
+        "chargerConnectionStatus": {
+          "status": "OK",
+          "value": "CONNECTED",
+          "updatedAt": "2025-08-07T14:30:32Z"
+        },
+        "chargingStatus": {
+          "status": "OK",
+          "value": "DONE",
+          "updatedAt": "2025-08-07T14:30:32Z"
+        },
+        "chargingType": {
+          "status": "OK",
+          "value": "AC",
+          "updatedAt": "2025-08-07T14:30:32Z"
+        },
+        "chargerPowerStatus": {
+          "status": "OK",
+          "value": "FAULT",
+          "updatedAt": "2025-08-07T14:30:32Z"
+        },
+        "estimatedChargingTimeToTargetBatteryChargeLevel": {
+          "status": "OK",
+          "value": 2,
+          "unit": "minutes",
+          "updatedAt": "2025-08-07T14:30:32Z"
+        },
+        "chargingCurrentLimit": {
+          "status": "ERROR",
+          "code": "NOT_SUPPORTED",
+          "message": "Resource is not supported for this vehicle"
+        },
+        "targetBatteryChargeLevel": {
+          "status": "OK",
+          "value": 90,
+          "unit": "percentage",
+          "updatedAt": "2025-08-07T14:49:50Z"
+        },
+        "chargingPower": {
+          "status": "ERROR",
+          "code": "PROPERTY_NOT_FOUND",
+          "message": "No valid value could be found for the requested property"
+        }
+      },
+      "energy_capabilities": {
+        "isSupported": true,
+        "batteryChargeLevel": {
+          "isSupported": true
+        },
+        "electricRange": {
+          "isSupported": true
+        },
+        "chargerConnectionStatus": {
+          "isSupported": true
+        },
+        "chargingSystemStatus": {
+          "isSupported": true
+        },
+        "chargingType": {
+          "isSupported": true
+        },
+        "chargerPowerStatus": {
+          "isSupported": true
+        },
+        "estimatedChargingTimeToTargetBatteryChargeLevel": {
+          "isSupported": true
+        },
+        "targetBatteryChargeLevel": {
+          "isSupported": true
+        },
+        "chargingCurrentLimit": {
+          "isSupported": false
+        },
+        "chargingPower": {
+          "isSupported": true
+        }
+      }
+    },
+    "xc60_phev_2020": {
+      "vehicle": {
+        "vin": "YV1ABCDEFG1234567",
+        "modelYear": 2020,
+        "gearbox": "AUTOMATIC",
+        "fuelType": "PETROL/ELECTRIC",
+        "externalColour": "Bright Silver",
+        "batteryCapacityKWH": 11.832,
+        "images": {
+          "exteriorImageUrl": "https://cas.volvocars.com/image/dynamic/MY20_0000/123/exterior-v1/_/default.png?market=se&client=public-api-engineering&angle=1&bg=00000000&w=1920",
+          "internalImageUrl": "https://cas.volvocars.com/image/dynamic/MY20_0000/123/interior-v1/_/default.jpg?market=se&client=public-api-engineering&angle=0&w=1920"
+        },
+        "descriptions": {
+          "model": "XC60",
+          "upholstery": "CHARCOAL/LEABR3/CHARC/SPO",
+          "steering": "LEFT"
+        }
+      },
+      "statistics": {
+        "averageFuelConsumption": {
+          "value": 4.0,
+          "unit": "l/100km",
+          "timestamp": "2025-08-07T20:29:18.343Z"
+        },
+        "averageSpeed": {
+          "value": 65,
+          "unit": "km/h",
+          "timestamp": "2025-08-07T20:29:18.343Z"
+        },
+        "tripMeterManual": {
+          "value": 219.7,
+          "unit": "km",
+          "timestamp": "2025-08-07T20:29:18.343Z"
+        },
+        "tripMeterAutomatic": {
+          "value": 0.0,
+          "unit": "km",
+          "timestamp": "2025-08-07T20:29:18.343Z"
+        },
+        "distanceToEmptyTank": {
+          "value": 920,
+          "unit": "km",
+          "timestamp": "2025-08-07T20:29:18.343Z"
+        },
+        "distanceToEmptyBattery": {
+          "value": 29,
+          "unit": "km",
+          "timestamp": "2025-08-07T20:29:18.343Z"
+        }
+      },
+      "energy_state": {
+        "batteryChargeLevel": {
+          "status": "ERROR",
+          "code": "NOT_SUPPORTED",
+          "message": "Resource is not supported for this vehicle"
+        },
+        "electricRange": {
+          "status": "ERROR",
+          "code": "NOT_SUPPORTED",
+          "message": "Resource is not supported for this vehicle"
+        },
+        "chargerConnectionStatus": {
+          "status": "OK",
+          "value": "DISCONNECTED",
+          "updatedAt": "2025-08-07T20:29:18Z"
+        },
+        "chargingStatus": {
+          "status": "OK",
+          "value": "IDLE",
+          "updatedAt": "2025-08-07T20:29:18Z"
+        },
+        "chargingType": {
+          "status": "ERROR",
+          "code": "NOT_SUPPORTED",
+          "message": "Resource is not supported for this vehicle"
+        },
+        "chargerPowerStatus": {
+          "status": "ERROR",
+          "code": "NOT_SUPPORTED",
+          "message": "Resource is not supported for this vehicle"
+        },
+        "estimatedChargingTimeToTargetBatteryChargeLevel": {
+          "status": "ERROR",
+          "code": "NOT_SUPPORTED",
+          "message": "Resource is not supported for this vehicle"
+        },
+        "chargingCurrentLimit": {
+          "status": "ERROR",
+          "code": "NOT_SUPPORTED",
+          "message": "Resource is not supported for this vehicle"
+        },
+        "targetBatteryChargeLevel": {
+          "status": "OK",
+          "value": 80,
+          "unit": "percentage",
+          "updatedAt": "2024-09-22T09:40:12Z"
+        },
+        "chargingPower": {
+          "status": "ERROR",
+          "code": "NOT_SUPPORTED",
+          "message": "Resource is not supported for this vehicle"
+        }
+      },
+      "energy_capabilities": {
+        "isSupported": true,
+        "batteryChargeLevel": {
+          "isSupported": false
+        },
+        "electricRange": {
+          "isSupported": false
+        },
+        "chargerConnectionStatus": {
+          "isSupported": true
+        },
+        "chargingSystemStatus": {
+          "isSupported": true
+        },
+        "chargingType": {
+          "isSupported": false
+        },
+        "chargerPowerStatus": {
+          "isSupported": false
+        },
+        "estimatedChargingTimeToTargetBatteryChargeLevel": {
+          "isSupported": false
+        },
+        "targetBatteryChargeLevel": {
+          "isSupported": true
+        },
+        "chargingCurrentLimit": {
+          "isSupported": false
+        },
+        "chargingPower": {
+          "isSupported": false
+        }
+      }
+    },
+    "xc90_petrol_2019": {
+      "vehicle": {
+        "vin": "YV1ABCDEFG1234567",
+        "modelYear": 2019,
+        "gearbox": "AUTOMATIC",
+        "fuelType": "PETROL",
+        "externalColour": "Passion Red Solid",
+        "images": {
+          "exteriorImageUrl": "https://cas.volvocars.com/image/vbsnext-v4/exterior/MY17_0000/123/_/default.png?market=se&client=public-api-engineering&angle=1&bg=00000000&w=1920",
+          "internalImageUrl": "https://cas.volvocars.com/image/vbsnext-v4/interior/MY17_0000/123/_/default.jpg?market=se&client=public-api-engineering&angle=0&w=1920"
+        },
+        "descriptions": {
+          "model": "XC90",
+          "upholstery": "CHARCOAL/LEABR/CHARC/S",
+          "steering": "LEFT"
+        }
+      },
+      "statistics": {
+        "averageFuelConsumption": {
+          "value": 9.59,
+          "unit": "l/100km",
+          "timestamp": "2024-12-30T14:53:44.785Z"
+        },
+        "averageSpeed": {
+          "value": 66,
+          "unit": "km/h",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "averageSpeedAutomatic": {
+          "value": 77,
+          "unit": "km/h",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "distanceToEmptyTank": {
+          "value": 253,
+          "unit": "km",
+          "timestamp": "2024-12-30T14:30:08.338Z"
+        },
+        "tripMeterManual": {
+          "value": 178.9,
+          "unit": "km",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        },
+        "tripMeterAutomatic": {
+          "value": 4.2,
+          "unit": "km",
+          "timestamp": "2024-12-30T14:18:56.849Z"
+        }
+      },
+      "commands": {
+        "data": [
+          {
+            "command": "LOCK_REDUCED_GUARD",
+            "href": "/v2/vehicles/YV1ABCDEFG1234567/commands/lock-reduced-guard"
+          },
+          {
+            "command": "LOCK",
+            "href": "/v2/vehicles/YV1ABCDEFG1234567/commands/lock"
+          },
+          {
+            "command": "UNLOCK",
+            "href": "/v2/vehicles/YV1ABCDEFG1234567/commands/unlock"
+          },
+          {
+            "command": "HONK",
+            "href": "/v2/vehicles/YV1ABCDEFG1234567/commands/honk"
+          },
+          {
+            "command": "HONK_AND_FLASH",
+            "href": "/v2/vehicles/YV1ABCDEFG1234567/commands/honk-flash"
+          },
+          {
+            "command": "FLASH",
+            "href": "/v2/vehicles/YV1ABCDEFG1234567/commands/flash"
+          },
+          {
+            "command": "CLIMATIZATION_START",
+            "href": "/v2/vehicles/YV1ABCDEFG1234567/commands/climatization-start"
+          },
+          {
+            "command": "CLIMATIZATION_STOP",
+            "href": "/v2/vehicles/YV1ABCDEFG1234567/commands/climatization-stop"
+          },
+          {
+            "command": "ENGINE_START",
+            "href": "/v2/vehicles/YV1ABCDEFG1234567/commands/engine-start"
+          },
+          {
+            "command": "ENGINE_STOP",
+            "href": "/v2/vehicles/YV1ABCDEFG1234567/commands/engine-stop"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1172 @@
+{
+  "manifest_version": 1,
+  "type": "device",
+  "name": "Volvo",
+  "description": {
+    "en": "Your Volvo in Gladys: battery, fuel, charge, doors, lock, climate, position and scenes.",
+    "fr": "Votre Volvo dans Gladys : batterie, carburant, charge, portes, verrouillage, clim et scènes."
+  },
+  "version": "0.1.0",
+  "docker_image": "ghcr.io/william-de71/gladys-volvo:0.1.0",
+  "gladys_version": ">=5.1.1",
+  "categories": ["energy", "security"],
+  "cover_image": "https://raw.githubusercontent.com/William-De71/gladys-volvo/main/cover.jpg",
+  "transports": ["cloud"],
+  "location": true,
+  "config_schema": [
+    {
+      "key": "intro",
+      "type": "section",
+      "label": {
+        "en": "1. Volvo developer application",
+        "fr": "1. Application développeur Volvo"
+      },
+      "description": {
+        "en": "Gladys reads your car through the official Volvo Cars APIs. On the Volvo developer portal, sign in with the Volvo ID of your car, open the API applications page and create an application (any name, e.g. Gladys). Copy its VCC API key (primary) below. One application per car is best: each one has a daily request quota.",
+        "fr": "Gladys lit votre voiture via les API officielles de Volvo Cars. Sur le portail développeur Volvo, connectez-vous avec le Volvo ID de votre voiture, ouvrez la page des applications d’API et créez une application (nom libre, par exemple Gladys). Copiez ci-dessous sa VCC API key (primaire). Une application par voiture est préférable : chacune a un quota de requêtes quotidien."
+      },
+      "links": [
+        {
+          "url": "https://developer.volvocars.com/account/#your-api-applications",
+          "label": {
+            "en": "My API applications",
+            "fr": "Mes applications d’API"
+          }
+        },
+        {
+          "url": "https://developer.volvocars.com/terms-and-conditions/apis-supported-locations/",
+          "label": {
+            "en": "Supported countries",
+            "fr": "Pays couverts"
+          }
+        }
+      ]
+    },
+    {
+      "key": "api_key",
+      "type": "secret",
+      "label": {
+        "en": "VCC API key",
+        "fr": "VCC API key"
+      },
+      "description": {
+        "en": "The primary key of the application (32 characters).",
+        "fr": "La clé primaire de l’application (32 caractères)."
+      },
+      "required": true
+    },
+    {
+      "key": "publish_intro",
+      "type": "section",
+      "label": {
+        "en": "2. Publish the application",
+        "fr": "2. Publier l’application"
+      },
+      "description": {
+        "en": "Under the application, click Publish. Tick ALL the scopes (expand every section), and add as redirect URI the address Gladys shows next to the Connect button below. Confirm: the portal then gives a client ID and a client secret, to copy here. Volvo limits the authorization of such an application in time: when it ends, Gladys warns you and you click Connect again.",
+        "fr": "Sous l’application, cliquez sur Publish. Cochez TOUS les scopes (dépliez chaque section) et ajoutez comme Redirect URI l’adresse que Gladys affiche à côté du bouton Connecter plus bas. Confirmez : le portail donne alors un client ID et un client secret, à copier ici. Volvo limite dans le temps l’autorisation d’une telle application : quand elle prend fin, Gladys vous prévient et vous cliquez de nouveau sur Connecter."
+      }
+    },
+    {
+      "key": "client_id",
+      "type": "string",
+      "label": {
+        "en": "Client ID",
+        "fr": "Client ID"
+      },
+      "required": true
+    },
+    {
+      "key": "client_secret",
+      "type": "secret",
+      "label": {
+        "en": "Client secret",
+        "fr": "Client secret"
+      },
+      "required": true
+    },
+    {
+      "key": "account_intro",
+      "type": "section",
+      "label": {
+        "en": "3. Sign in with your Volvo ID",
+        "fr": "3. Connexion avec votre Volvo ID"
+      },
+      "description": {
+        "en": "Save first, then click Connect: the Volvo ID page opens (a code is sent by e-mail). Approve the access; you come back to Gladys, then add your cars from the Discovery tab.",
+        "fr": "Enregistrez d’abord, puis cliquez sur Connecter : la page Volvo ID s’ouvre (un code vous est envoyé par e-mail). Autorisez l’accès ; vous revenez sur Gladys, puis ajoutez vos voitures depuis l’onglet Découverte."
+      }
+    },
+    {
+      "key": "volvo_account",
+      "type": "oauth2",
+      "label": {
+        "en": "Volvo ID",
+        "fr": "Volvo ID"
+      }
+    },
+    {
+      "key": "options_intro",
+      "type": "section",
+      "label": {
+        "en": "Options",
+        "fr": "Options"
+      }
+    },
+    {
+      "key": "poll_interval",
+      "type": "number",
+      "label": {
+        "en": "Refresh interval (min)",
+        "fr": "Intervalle de lecture (min)"
+      },
+      "description": {
+        "en": "Lock, doors, battery, charge and position, between 2 and 60 minutes. About 2,000 requests a day per car at 5 minutes; service and warnings are read every 30 minutes.",
+        "fr": "Verrouillage, portes, batterie, charge et position, entre 2 et 60 minutes. Environ 2 000 requêtes par jour et par voiture à 5 minutes ; entretien et alertes sont lus toutes les 30 minutes."
+      },
+      "min": 2,
+      "max": 60,
+      "default": 5,
+      "required": false
+    },
+    {
+      "key": "home_radius",
+      "type": "number",
+      "label": {
+        "en": "Home radius (m)",
+        "fr": "Rayon du domicile (m)"
+      },
+      "description": {
+        "en": "A car closer than this to a house of Gladys (with its position set) is home: distance feature and arrived/left scenes.",
+        "fr": "Une voiture plus proche que cela d’une maison de Gladys (dont la position est renseignée) est à la maison : distance et scènes arrivée/départ."
+      },
+      "min": 50,
+      "max": 5000,
+      "default": 200,
+      "required": false
+    }
+  ],
+  "actions": [
+    {
+      "key": "test_connection",
+      "label": {
+        "en": "Test the connection",
+        "fr": "Tester la connexion"
+      },
+      "description": {
+        "en": "Checks the sign-in and the API key, and lists the cars of the account.",
+        "fr": "Vérifie la connexion et la clé d’API, et liste les voitures du compte."
+      },
+      "timeout_seconds": 60
+    },
+    {
+      "key": "refresh",
+      "label": {
+        "en": "Read the cars now",
+        "fr": "Lire les voitures maintenant"
+      },
+      "description": {
+        "en": "Reads everything now, without waiting for the next round.",
+        "fr": "Relit tout maintenant, sans attendre le prochain tour."
+      },
+      "timeout_seconds": 90
+    },
+    {
+      "key": "disconnect",
+      "label": {
+        "en": "Disconnect",
+        "fr": "Déconnecter"
+      },
+      "description": {
+        "en": "Forgets the Volvo ID tokens: reading stops until Connect.",
+        "fr": "Oublie les jetons Volvo ID : la lecture s’arrête jusqu’à Connecter."
+      },
+      "timeout_seconds": 15
+    }
+  ],
+  "scene_triggers": [
+    {
+      "key": "lock_changed",
+      "label": {
+        "en": "Volvo: locked or unlocked",
+        "fr": "Volvo : verrouillée ou déverrouillée"
+      },
+      "description": {
+        "en": "The car is locked or unlocked. Checked at the refresh interval.",
+        "fr": "La voiture est verrouillée ou déverrouillée. Vérifié à l’intervalle de lecture."
+      },
+      "fields": [
+        {
+          "key": "vehicle",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          },
+          "description": {
+            "en": "Leave empty for any car.",
+            "fr": "Laissez vide pour toutes les voitures."
+          },
+          "required": false
+        },
+        {
+          "key": "state",
+          "type": "select",
+          "label": {
+            "en": "New state",
+            "fr": "Nouvel état"
+          },
+          "options": [
+            {
+              "value": "locked",
+              "label": {
+                "en": "Locked",
+                "fr": "Verrouillée"
+              }
+            },
+            {
+              "value": "unlocked",
+              "label": {
+                "en": "Unlocked",
+                "fr": "Déverrouillée"
+              }
+            }
+          ],
+          "required": false
+        }
+      ],
+      "variables": [
+        {
+          "key": "vehicle_name",
+          "type": "string",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Summary",
+            "fr": "Résumé"
+          },
+          "description": {
+            "en": "A sentence ready to put in a message.",
+            "fr": "Une phrase prête à mettre dans un message."
+          }
+        }
+      ]
+    },
+    {
+      "key": "left_open",
+      "label": {
+        "en": "Volvo: locked but left open",
+        "fr": "Volvo : verrouillée mais ouverte"
+      },
+      "description": {
+        "en": "The car is locked while a door, window, sunroof, tailgate or hood is open.",
+        "fr": "La voiture est verrouillée alors qu’une porte, fenêtre, le toit, le hayon ou le capot est ouvert."
+      },
+      "fields": [
+        {
+          "key": "vehicle",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          },
+          "description": {
+            "en": "Leave empty for any car.",
+            "fr": "Laissez vide pour toutes les voitures."
+          },
+          "required": false
+        }
+      ],
+      "variables": [
+        {
+          "key": "vehicle_name",
+          "type": "string",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          }
+        },
+        {
+          "key": "openings",
+          "type": "string",
+          "label": {
+            "en": "What is open",
+            "fr": "Ce qui est ouvert"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Summary",
+            "fr": "Résumé"
+          },
+          "description": {
+            "en": "A sentence ready to put in a message.",
+            "fr": "Une phrase prête à mettre dans un message."
+          }
+        }
+      ]
+    },
+    {
+      "key": "engine_changed",
+      "label": {
+        "en": "Volvo: engine started or stopped",
+        "fr": "Volvo : moteur démarré ou arrêté"
+      },
+      "description": {
+        "en": "The engine (or the drive system of an electric car) starts or stops.",
+        "fr": "Le moteur (ou la chaîne de traction d’une électrique) démarre ou s’arrête."
+      },
+      "fields": [
+        {
+          "key": "vehicle",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          },
+          "description": {
+            "en": "Leave empty for any car.",
+            "fr": "Laissez vide pour toutes les voitures."
+          },
+          "required": false
+        },
+        {
+          "key": "state",
+          "type": "select",
+          "label": {
+            "en": "Change",
+            "fr": "Changement"
+          },
+          "options": [
+            {
+              "value": "started",
+              "label": {
+                "en": "Started",
+                "fr": "Démarré"
+              }
+            },
+            {
+              "value": "stopped",
+              "label": {
+                "en": "Stopped",
+                "fr": "Arrêté"
+              }
+            }
+          ],
+          "required": false
+        }
+      ],
+      "variables": [
+        {
+          "key": "vehicle_name",
+          "type": "string",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Summary",
+            "fr": "Résumé"
+          },
+          "description": {
+            "en": "A sentence ready to put in a message.",
+            "fr": "Une phrase prête à mettre dans un message."
+          }
+        }
+      ]
+    },
+    {
+      "key": "charging_changed",
+      "label": {
+        "en": "Volvo: charging status changed",
+        "fr": "Volvo : état de la charge modifié"
+      },
+      "description": {
+        "en": "Charging starts, completes, stops or fails (electric and plug-in hybrid cars).",
+        "fr": "La charge démarre, se termine, s’arrête ou échoue (électriques et hybrides rechargeables)."
+      },
+      "fields": [
+        {
+          "key": "vehicle",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          },
+          "description": {
+            "en": "Leave empty for any car.",
+            "fr": "Laissez vide pour toutes les voitures."
+          },
+          "required": false
+        },
+        {
+          "key": "status",
+          "type": "select",
+          "label": {
+            "en": "New status",
+            "fr": "Nouvel état"
+          },
+          "options": [
+            {
+              "value": "charging",
+              "label": {
+                "en": "Charging",
+                "fr": "En charge"
+              }
+            },
+            {
+              "value": "done",
+              "label": {
+                "en": "Charge complete",
+                "fr": "Charge terminée"
+              }
+            },
+            {
+              "value": "idle",
+              "label": {
+                "en": "Not charging",
+                "fr": "Pas en charge"
+              }
+            },
+            {
+              "value": "scheduled",
+              "label": {
+                "en": "Charge scheduled",
+                "fr": "Charge programmée"
+              }
+            },
+            {
+              "value": "discharging",
+              "label": {
+                "en": "Discharging",
+                "fr": "En décharge"
+              }
+            },
+            {
+              "value": "error",
+              "label": {
+                "en": "Charging error",
+                "fr": "Erreur de charge"
+              }
+            }
+          ],
+          "required": false
+        }
+      ],
+      "variables": [
+        {
+          "key": "vehicle_name",
+          "type": "string",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          }
+        },
+        {
+          "key": "status_label",
+          "type": "string",
+          "label": {
+            "en": "Status (text)",
+            "fr": "État (texte)"
+          }
+        },
+        {
+          "key": "battery_level",
+          "type": "number",
+          "label": {
+            "en": "Battery (%)",
+            "fr": "Batterie (%)"
+          }
+        },
+        {
+          "key": "range_km",
+          "type": "number",
+          "label": {
+            "en": "Electric range (km)",
+            "fr": "Autonomie électrique (km)"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Summary",
+            "fr": "Résumé"
+          },
+          "description": {
+            "en": "A sentence ready to put in a message.",
+            "fr": "Une phrase prête à mettre dans un message."
+          }
+        }
+      ]
+    },
+    {
+      "key": "charger_connection_changed",
+      "label": {
+        "en": "Volvo: charging cable plugged or unplugged",
+        "fr": "Volvo : câble de charge branché ou débranché"
+      },
+      "description": {
+        "en": "The charging cable is plugged in or unplugged.",
+        "fr": "Le câble de charge est branché ou débranché."
+      },
+      "fields": [
+        {
+          "key": "vehicle",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          },
+          "description": {
+            "en": "Leave empty for any car.",
+            "fr": "Laissez vide pour toutes les voitures."
+          },
+          "required": false
+        },
+        {
+          "key": "state",
+          "type": "select",
+          "label": {
+            "en": "Change",
+            "fr": "Changement"
+          },
+          "options": [
+            {
+              "value": "connected",
+              "label": {
+                "en": "Plugged in",
+                "fr": "Branché"
+              }
+            },
+            {
+              "value": "disconnected",
+              "label": {
+                "en": "Unplugged",
+                "fr": "Débranché"
+              }
+            }
+          ],
+          "required": false
+        }
+      ],
+      "variables": [
+        {
+          "key": "vehicle_name",
+          "type": "string",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          }
+        },
+        {
+          "key": "battery_level",
+          "type": "number",
+          "label": {
+            "en": "Battery (%)",
+            "fr": "Batterie (%)"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Summary",
+            "fr": "Résumé"
+          },
+          "description": {
+            "en": "A sentence ready to put in a message.",
+            "fr": "Une phrase prête à mettre dans un message."
+          }
+        }
+      ]
+    },
+    {
+      "key": "home_changed",
+      "label": {
+        "en": "Volvo: arrived home or left",
+        "fr": "Volvo : arrivée ou départ de la maison"
+      },
+      "description": {
+        "en": "The car enters or leaves the home radius. Needs the position of the car and of a house.",
+        "fr": "La voiture entre dans le rayon du domicile ou en sort. Nécessite la position de la voiture et d’une maison."
+      },
+      "fields": [
+        {
+          "key": "vehicle",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          },
+          "description": {
+            "en": "Leave empty for any car.",
+            "fr": "Laissez vide pour toutes les voitures."
+          },
+          "required": false
+        },
+        {
+          "key": "state",
+          "type": "select",
+          "label": {
+            "en": "Change",
+            "fr": "Changement"
+          },
+          "options": [
+            {
+              "value": "arrived",
+              "label": {
+                "en": "Arrived home",
+                "fr": "Arrivée à la maison"
+              }
+            },
+            {
+              "value": "left",
+              "label": {
+                "en": "Left home",
+                "fr": "Départ de la maison"
+              }
+            }
+          ],
+          "required": false
+        }
+      ],
+      "variables": [
+        {
+          "key": "vehicle_name",
+          "type": "string",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          }
+        },
+        {
+          "key": "distance_km",
+          "type": "number",
+          "label": {
+            "en": "Distance from home (km)",
+            "fr": "Distance du domicile (km)"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Summary",
+            "fr": "Résumé"
+          },
+          "description": {
+            "en": "A sentence ready to put in a message.",
+            "fr": "Une phrase prête à mettre dans un message."
+          }
+        }
+      ]
+    },
+    {
+      "key": "warning_raised",
+      "label": {
+        "en": "Volvo: new warning",
+        "fr": "Volvo : nouvelle alerte"
+      },
+      "description": {
+        "en": "A new warning: tyre pressure, fluid level, bulb failure or service due.",
+        "fr": "Une nouvelle alerte : pression d’un pneu, niveau d’un liquide, ampoule ou entretien à faire."
+      },
+      "fields": [
+        {
+          "key": "vehicle",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          },
+          "description": {
+            "en": "Leave empty for any car.",
+            "fr": "Laissez vide pour toutes les voitures."
+          },
+          "required": false
+        }
+      ],
+      "variables": [
+        {
+          "key": "vehicle_name",
+          "type": "string",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          }
+        },
+        {
+          "key": "warning",
+          "type": "string",
+          "label": {
+            "en": "Warning (code)",
+            "fr": "Alerte (code)"
+          }
+        },
+        {
+          "key": "warning_label",
+          "type": "string",
+          "label": {
+            "en": "Warning",
+            "fr": "Alerte"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Summary",
+            "fr": "Résumé"
+          },
+          "description": {
+            "en": "A sentence ready to put in a message.",
+            "fr": "Une phrase prête à mettre dans un message."
+          }
+        }
+      ]
+    },
+    {
+      "key": "authorization_expired",
+      "label": {
+        "en": "Volvo: sign in again",
+        "fr": "Volvo : reconnexion nécessaire"
+      },
+      "description": {
+        "en": "Volvo ended the authorization of Gladys: reading stops until you click Connect again.",
+        "fr": "Volvo a mis fin à l’autorisation de Gladys : la lecture s’arrête jusqu’à un nouveau clic sur Connecter."
+      },
+      "fields": [],
+      "variables": [
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Summary",
+            "fr": "Résumé"
+          },
+          "description": {
+            "en": "A sentence ready to put in a message.",
+            "fr": "Une phrase prête à mettre dans un message."
+          }
+        }
+      ]
+    }
+  ],
+  "scene_actions": [
+    {
+      "key": "send_command",
+      "label": {
+        "en": "Volvo: send a command",
+        "fr": "Volvo : envoyer une commande"
+      },
+      "description": {
+        "en": "Lock, unlock, climate, honk or flash, remote engine start. Waits for the car.",
+        "fr": "Verrouiller, déverrouiller, climatiser, klaxonner, démarrer le moteur à distance. Attend la voiture."
+      },
+      "timeout_seconds": 120,
+      "fields": [
+        {
+          "key": "vehicle",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          },
+          "description": {
+            "en": "Leave empty for the first car.",
+            "fr": "Laissez vide pour la première voiture."
+          },
+          "required": false
+        },
+        {
+          "key": "command",
+          "type": "select",
+          "label": {
+            "en": "Command",
+            "fr": "Commande"
+          },
+          "options": [
+            {
+              "value": "lock",
+              "label": {
+                "en": "Lock",
+                "fr": "Verrouiller"
+              }
+            },
+            {
+              "value": "unlock",
+              "label": {
+                "en": "Unlock",
+                "fr": "Déverrouiller"
+              }
+            },
+            {
+              "value": "lock_reduced_guard",
+              "label": {
+                "en": "Lock with reduced guard",
+                "fr": "Verrouiller (surveillance réduite)"
+              }
+            },
+            {
+              "value": "climatization_start",
+              "label": {
+                "en": "Start the climate",
+                "fr": "Démarrer la climatisation"
+              }
+            },
+            {
+              "value": "climatization_stop",
+              "label": {
+                "en": "Stop the climate",
+                "fr": "Arrêter la climatisation"
+              }
+            },
+            {
+              "value": "flash",
+              "label": {
+                "en": "Flash the lights",
+                "fr": "Faire clignoter les feux"
+              }
+            },
+            {
+              "value": "honk",
+              "label": {
+                "en": "Honk",
+                "fr": "Klaxonner"
+              }
+            },
+            {
+              "value": "honk_flash",
+              "label": {
+                "en": "Honk and flash",
+                "fr": "Klaxonner et clignoter"
+              }
+            },
+            {
+              "value": "engine_start",
+              "label": {
+                "en": "Start the engine",
+                "fr": "Démarrer le moteur"
+              }
+            },
+            {
+              "value": "engine_stop",
+              "label": {
+                "en": "Stop the engine",
+                "fr": "Arrêter le moteur"
+              }
+            }
+          ],
+          "required": true
+        },
+        {
+          "key": "runtime_minutes",
+          "type": "number",
+          "label": {
+            "en": "Engine runtime (min)",
+            "fr": "Durée moteur (min)"
+          },
+          "description": {
+            "en": "Remote engine start only: 1 to 15 minutes.",
+            "fr": "Démarrage du moteur uniquement : 1 à 15 minutes."
+          },
+          "min": 1,
+          "max": 15,
+          "default": 15,
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "key": "success",
+          "type": "boolean",
+          "label": {
+            "en": "Carried out",
+            "fr": "Exécutée"
+          }
+        },
+        {
+          "key": "status",
+          "type": "string",
+          "label": {
+            "en": "Volvo status",
+            "fr": "Statut Volvo"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Summary",
+            "fr": "Résumé"
+          }
+        }
+      ]
+    },
+    {
+      "key": "get_status",
+      "label": {
+        "en": "Volvo: car status",
+        "fr": "Volvo : état de la voiture"
+      },
+      "description": {
+        "en": "Lock, openings, battery or fuel, range, charge, position and warnings.",
+        "fr": "Verrouillage, ouvrants, batterie ou carburant, autonomie, charge, position et alertes."
+      },
+      "timeout_seconds": 60,
+      "fields": [
+        {
+          "key": "vehicle",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          },
+          "description": {
+            "en": "Leave empty for the first car.",
+            "fr": "Laissez vide pour la première voiture."
+          },
+          "required": false
+        },
+        {
+          "key": "refresh",
+          "type": "boolean",
+          "label": {
+            "en": "Read the car now",
+            "fr": "Lire la voiture maintenant"
+          },
+          "description": {
+            "en": "Otherwise the last reading is used (at most one refresh interval old).",
+            "fr": "Sinon la dernière lecture est utilisée (au plus un intervalle de lecture)."
+          },
+          "default": false,
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "key": "vehicle_name",
+          "type": "string",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          }
+        },
+        {
+          "key": "locked",
+          "type": "boolean",
+          "label": {
+            "en": "Locked",
+            "fr": "Verrouillée"
+          }
+        },
+        {
+          "key": "all_closed",
+          "type": "boolean",
+          "label": {
+            "en": "All closed",
+            "fr": "Tout est fermé"
+          }
+        },
+        {
+          "key": "openings",
+          "type": "string",
+          "label": {
+            "en": "What is open",
+            "fr": "Ce qui est ouvert"
+          }
+        },
+        {
+          "key": "battery_level",
+          "type": "number",
+          "label": {
+            "en": "Battery (%)",
+            "fr": "Batterie (%)"
+          }
+        },
+        {
+          "key": "battery_range_km",
+          "type": "number",
+          "label": {
+            "en": "Electric range (km)",
+            "fr": "Autonomie électrique (km)"
+          }
+        },
+        {
+          "key": "fuel_liters",
+          "type": "number",
+          "label": {
+            "en": "Fuel (L)",
+            "fr": "Carburant (L)"
+          }
+        },
+        {
+          "key": "fuel_range_km",
+          "type": "number",
+          "label": {
+            "en": "Fuel range (km)",
+            "fr": "Autonomie carburant (km)"
+          }
+        },
+        {
+          "key": "charging_status",
+          "type": "string",
+          "label": {
+            "en": "Charging status",
+            "fr": "État de la charge"
+          }
+        },
+        {
+          "key": "plugged",
+          "type": "boolean",
+          "label": {
+            "en": "Cable plugged in",
+            "fr": "Câble branché"
+          }
+        },
+        {
+          "key": "engine_running",
+          "type": "boolean",
+          "label": {
+            "en": "Engine running",
+            "fr": "Moteur en marche"
+          }
+        },
+        {
+          "key": "odometer_km",
+          "type": "number",
+          "label": {
+            "en": "Odometer (km)",
+            "fr": "Kilométrage (km)"
+          }
+        },
+        {
+          "key": "at_home",
+          "type": "boolean",
+          "label": {
+            "en": "Home",
+            "fr": "À la maison"
+          }
+        },
+        {
+          "key": "distance_home_km",
+          "type": "number",
+          "label": {
+            "en": "Distance from home (km)",
+            "fr": "Distance du domicile (km)"
+          }
+        },
+        {
+          "key": "latitude",
+          "type": "number",
+          "label": {
+            "en": "Latitude",
+            "fr": "Latitude"
+          }
+        },
+        {
+          "key": "longitude",
+          "type": "number",
+          "label": {
+            "en": "Longitude",
+            "fr": "Longitude"
+          }
+        },
+        {
+          "key": "map_url",
+          "type": "string",
+          "label": {
+            "en": "Map link",
+            "fr": "Lien vers la carte"
+          }
+        },
+        {
+          "key": "warnings",
+          "type": "string",
+          "label": {
+            "en": "Warnings",
+            "fr": "Alertes"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Summary",
+            "fr": "Résumé"
+          },
+          "description": {
+            "en": "A sentence ready to put in a message.",
+            "fr": "Une phrase prête à mettre dans un message."
+          }
+        }
+      ]
+    }
+  ],
+  "widgets": [
+    {
+      "key": "vehicle",
+      "label": {
+        "en": "Volvo car",
+        "fr": "Voiture Volvo"
+      },
+      "description": {
+        "en": "The car with its picture, battery or fuel, range, lock, openings and quick buttons.",
+        "fr": "La voiture avec sa photo, batterie ou carburant, autonomie, verrouillage, ouvrants et boutons."
+      },
+      "icon": "truck",
+      "settings": [
+        {
+          "key": "vehicle",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Car",
+            "fr": "Voiture"
+          },
+          "description": {
+            "en": "Leave empty for the first car.",
+            "fr": "Laissez vide pour la première voiture."
+          },
+          "required": false
+        },
+        {
+          "key": "show_buttons",
+          "type": "boolean",
+          "label": {
+            "en": "Show the buttons",
+            "fr": "Afficher les boutons"
+          },
+          "description": {
+            "en": "Lock/unlock, climate, flash the lights, map.",
+            "fr": "Verrouiller/déverrouiller, climatiser, faire clignoter, carte."
+          },
+          "default": true,
+          "required": false
+        }
+      ]
+    }
+  ]
+}
