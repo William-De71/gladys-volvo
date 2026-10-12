@@ -4,7 +4,9 @@
   "name": "Volvo",
   "description": {
     "en": "Your Volvo in Gladys: battery, fuel, charge, doors, lock, climate, position and scenes.",
-    "fr": "Votre Volvo dans Gladys : batterie, carburant, charge, portes, verrouillage, clim et scènes."
+    "fr": "Votre Volvo dans Gladys : batterie, carburant, charge, portes, verrouillage, clim et scènes.",
+    "de": "Ihr Volvo in Gladys: Batterie, Kraftstoff, Laden, Türen, Verriegelung, Klima und Szenen.",
+    "es": "Su Volvo en Gladys: batería, combustible, carga, puertas, cierre, climatización y escenas."
   },
   "version": "1.0.0",
   "docker_image": "ghcr.io/william-de71/gladys-volvo:1.0.0",
@@ -19,25 +21,33 @@
       "type": "section",
       "label": {
         "en": "1. Volvo developer application",
-        "fr": "1. Application développeur Volvo"
+        "fr": "1. Application développeur Volvo",
+        "de": "1. Volvo-Entwickleranwendung",
+        "es": "1. Aplicación de desarrollador de Volvo"
       },
       "description": {
         "en": "Gladys reads your car through the official Volvo Cars APIs. On the Volvo developer portal, sign in with the Volvo ID of your car, open the API applications page and create an application (any name, e.g. Gladys). Copy its VCC API key (primary) below. One application per car is best: each one has a daily request quota.",
-        "fr": "Gladys lit votre voiture via les API officielles de Volvo Cars. Sur le portail développeur Volvo, connectez-vous avec le Volvo ID de votre voiture, ouvrez la page des applications d’API et créez une application (nom libre, par exemple Gladys). Copiez ci-dessous sa VCC API key (primaire). Une application par voiture est préférable : chacune a un quota de requêtes quotidien."
+        "fr": "Gladys lit votre voiture via les API officielles de Volvo Cars. Sur le portail développeur Volvo, connectez-vous avec le Volvo ID de votre voiture, ouvrez la page des applications d’API et créez une application (nom libre, par exemple Gladys). Copiez ci-dessous sa VCC API key (primaire). Une application par voiture est préférable : chacune a un quota de requêtes quotidien.",
+        "de": "Gladys liest Ihr Fahrzeug über die offiziellen APIs von Volvo Cars aus. Melden Sie sich im Volvo-Entwicklerportal mit der Volvo ID Ihres Fahrzeugs an, öffnen Sie die Seite der API-Anwendungen und erstellen Sie eine Anwendung (beliebiger Name, z. B. Gladys). Kopieren Sie unten ihren VCC API key (primär). Am besten eine Anwendung pro Fahrzeug: Jede hat ein tägliches Anfragekontingent.",
+        "es": "Gladys lee su coche a través de las API oficiales de Volvo Cars. En el portal para desarrolladores de Volvo, inicie sesión con el Volvo ID de su coche, abra la página de aplicaciones de API y cree una aplicación (cualquier nombre, por ejemplo Gladys). Copie abajo su VCC API key (principal). Es preferible una aplicación por coche: cada una tiene una cuota diaria de solicitudes."
       },
       "links": [
         {
           "url": "https://developer.volvocars.com/account/#your-api-applications",
           "label": {
             "en": "My API applications",
-            "fr": "Mes applications d’API"
+            "fr": "Mes applications d’API",
+            "de": "Meine API-Anwendungen",
+            "es": "Mis aplicaciones de API"
           }
         },
         {
           "url": "https://developer.volvocars.com/terms-and-conditions/apis-supported-locations/",
           "label": {
             "en": "Supported countries",
-            "fr": "Pays couverts"
+            "fr": "Pays couverts",
+            "de": "Unterstützte Länder",
+            "es": "Países admitidos"
           }
         }
       ]
@@ -47,11 +57,15 @@
       "type": "secret",
       "label": {
         "en": "VCC API key",
-        "fr": "VCC API key"
+        "fr": "VCC API key",
+        "de": "VCC API key",
+        "es": "VCC API key"
       },
       "description": {
         "en": "The primary key of the application (32 characters).",
-        "fr": "La clé primaire de l’application (32 caractères)."
+        "fr": "La clé primaire de l’application (32 caractères).",
+        "de": "Der primäre Schlüssel der Anwendung (32 Zeichen).",
+        "es": "La clave principal de la aplicación (32 caracteres)."
       },
       "required": true
     },
@@ -60,11 +74,15 @@
       "type": "section",
       "label": {
         "en": "2. Publish the application",
-        "fr": "2. Publier l’application"
+        "fr": "2. Publier l’application",
+        "de": "2. Anwendung veröffentlichen",
+        "es": "2. Publicar la aplicación"
       },
       "description": {
         "en": "Under the application, click Publish. Tick ALL the scopes (expand every section), and add as redirect URI the address Gladys shows next to the Connect button below. Confirm: the portal then gives a client ID and a client secret, to copy here. Volvo limits the authorization of such an application in time: when it ends, Gladys warns you and you click Connect again.",
-        "fr": "Sous l’application, cliquez sur Publish. Cochez TOUS les scopes (dépliez chaque section) et ajoutez comme Redirect URI l’adresse que Gladys affiche à côté du bouton Connecter plus bas. Confirmez : le portail donne alors un client ID et un client secret, à copier ici. Volvo limite dans le temps l’autorisation d’une telle application : quand elle prend fin, Gladys vous prévient et vous cliquez de nouveau sur Connecter."
+        "fr": "Sous l’application, cliquez sur Publish. Cochez TOUS les scopes (dépliez chaque section) et ajoutez comme Redirect URI l’adresse que Gladys affiche à côté du bouton Connecter plus bas. Confirmez : le portail donne alors un client ID et un client secret, à copier ici. Volvo limite dans le temps l’autorisation d’une telle application : quand elle prend fin, Gladys vous prévient et vous cliquez de nouveau sur Connecter.",
+        "de": "Klicken Sie unter der Anwendung auf Publish. Markieren Sie ALLE Scopes (jeden Abschnitt aufklappen) und fügen Sie als Redirect URI die Adresse hinzu, die Gladys weiter unten neben der Schaltfläche „Verbinden“ anzeigt. Bestätigen Sie: Das Portal liefert dann eine Client ID und ein Client secret, die Sie hier eintragen. Volvo begrenzt die Autorisierung einer solchen Anwendung zeitlich: Wenn sie endet, benachrichtigt Gladys Sie und Sie klicken erneut auf „Verbinden“.",
+        "es": "Debajo de la aplicación, haga clic en Publish. Marque TODOS los scopes (despliegue cada sección) y añada como Redirect URI la dirección que Gladys muestra junto al botón «Conectar» más abajo. Confirme: el portal le da entonces un Client ID y un Client secret, que debe copiar aquí. Volvo limita en el tiempo la autorización de este tipo de aplicación: cuando termina, Gladys le avisa y usted vuelve a hacer clic en «Conectar»."
       }
     },
     {
@@ -72,7 +90,9 @@
       "type": "string",
       "label": {
         "en": "Client ID",
-        "fr": "Client ID"
+        "fr": "Client ID",
+        "de": "Client ID",
+        "es": "Client ID"
       },
       "required": true
     },
@@ -81,7 +101,9 @@
       "type": "secret",
       "label": {
         "en": "Client secret",
-        "fr": "Client secret"
+        "fr": "Client secret",
+        "de": "Client secret",
+        "es": "Client secret"
       },
       "required": true
     },
@@ -90,11 +112,15 @@
       "type": "section",
       "label": {
         "en": "3. Sign in with your Volvo ID",
-        "fr": "3. Connexion avec votre Volvo ID"
+        "fr": "3. Connexion avec votre Volvo ID",
+        "de": "3. Anmeldung mit Ihrer Volvo ID",
+        "es": "3. Inicio de sesión con su Volvo ID"
       },
       "description": {
         "en": "Save first, then click Connect: the Volvo ID page opens (a code is sent by e-mail). Approve the access; you come back to Gladys, then add your cars from the Discovery tab.",
-        "fr": "Enregistrez d’abord, puis cliquez sur Connecter : la page Volvo ID s’ouvre (un code vous est envoyé par e-mail). Autorisez l’accès ; vous revenez sur Gladys, puis ajoutez vos voitures depuis l’onglet Découverte."
+        "fr": "Enregistrez d’abord, puis cliquez sur Connecter : la page Volvo ID s’ouvre (un code vous est envoyé par e-mail). Autorisez l’accès ; vous revenez sur Gladys, puis ajoutez vos voitures depuis l’onglet Découverte.",
+        "de": "Speichern Sie zuerst und klicken Sie dann auf „Verbinden“: Die Volvo-ID-Seite öffnet sich (ein Code wird per E-Mail gesendet). Erlauben Sie den Zugriff; Sie kehren zu Gladys zurück und fügen Ihre Fahrzeuge dann über den Tab „Entdecken“ hinzu.",
+        "es": "Guarde primero y luego haga clic en «Conectar»: se abre la página de Volvo ID (se le envía un código por correo electrónico). Autorice el acceso; volverá a Gladys y luego podrá añadir sus coches desde la pestaña «Descubrir»."
       }
     },
     {
@@ -102,7 +128,9 @@
       "type": "oauth2",
       "label": {
         "en": "Volvo ID",
-        "fr": "Volvo ID"
+        "fr": "Volvo ID",
+        "de": "Volvo ID",
+        "es": "Volvo ID"
       }
     },
     {
@@ -110,7 +138,9 @@
       "type": "section",
       "label": {
         "en": "Options",
-        "fr": "Options"
+        "fr": "Options",
+        "de": "Optionen",
+        "es": "Opciones"
       }
     },
     {
@@ -118,11 +148,15 @@
       "type": "number",
       "label": {
         "en": "Refresh interval (min)",
-        "fr": "Intervalle de lecture (min)"
+        "fr": "Intervalle de lecture (min)",
+        "de": "Abfrageintervall (min)",
+        "es": "Intervalo de lectura (min)"
       },
       "description": {
         "en": "Lock, doors, battery, charge and position, between 2 and 60 minutes. About 2,000 requests a day per car at 5 minutes; service and warnings are read every 30 minutes.",
-        "fr": "Verrouillage, portes, batterie, charge et position, entre 2 et 60 minutes. Environ 2 000 requêtes par jour et par voiture à 5 minutes ; entretien et alertes sont lus toutes les 30 minutes."
+        "fr": "Verrouillage, portes, batterie, charge et position, entre 2 et 60 minutes. Environ 2 000 requêtes par jour et par voiture à 5 minutes ; entretien et alertes sont lus toutes les 30 minutes.",
+        "de": "Verriegelung, Türen, Batterie, Laden und Position, zwischen 2 und 60 Minuten. Bei 5 Minuten etwa 2.000 Anfragen pro Tag und Fahrzeug; Wartung und Warnungen werden alle 30 Minuten gelesen.",
+        "es": "Cierre, puertas, batería, carga y posición, entre 2 y 60 minutos. Unas 2.000 solicitudes al día por coche a 5 minutos; el mantenimiento y las alertas se leen cada 30 minutos."
       },
       "min": 2,
       "max": 60,
@@ -134,15 +168,84 @@
       "type": "number",
       "label": {
         "en": "Home radius (m)",
-        "fr": "Rayon du domicile (m)"
+        "fr": "Rayon du domicile (m)",
+        "de": "Radius um das Zuhause (m)",
+        "es": "Radio de la vivienda (m)"
       },
       "description": {
         "en": "A car closer than this to a house of Gladys (with its position set) is home: distance feature and arrived/left scenes.",
-        "fr": "Une voiture plus proche que cela d’une maison de Gladys (dont la position est renseignée) est à la maison : distance et scènes arrivée/départ."
+        "fr": "Une voiture plus proche que cela d’une maison de Gladys (dont la position est renseignée) est à la maison : distance et scènes arrivée/départ.",
+        "de": "Ein Fahrzeug, das näher als dieser Wert an einem Haus in Gladys (mit hinterlegter Position) ist, gilt als zu Hause: Entfernung und Szenen für Ankunft/Abfahrt.",
+        "es": "Un coche más cerca que este valor de una vivienda de Gladys (con su posición indicada) está en casa: distancia y escenas de llegada/salida."
       },
       "min": 50,
       "max": 5000,
       "default": 200,
+      "required": false
+    },
+    {
+      "key": "language",
+      "type": "select",
+      "label": {
+        "en": "Language of the texts",
+        "fr": "Langue des textes",
+        "de": "Sprache der Texte",
+        "es": "Idioma de los textos"
+      },
+      "description": {
+        "en": "Language of the device names, the charging status, the warnings and the scene summaries. Automatic: the language of your dashboard.",
+        "fr": "Langue des noms d’appareils, de l’état de la charge, des alertes et des résumés de scènes. Automatique : la langue de votre tableau de bord.",
+        "de": "Sprache der Gerätenamen, des Ladestatus, der Warnungen und der Szenen-Zusammenfassungen. Automatisch: die Sprache Ihres Dashboards.",
+        "es": "Idioma de los nombres de dispositivos, del estado de carga, de las alertas y de los resúmenes de escenas. Automático: el idioma de su panel."
+      },
+      "options": [
+        {
+          "value": "auto",
+          "label": {
+            "en": "Automatic",
+            "fr": "Automatique",
+            "de": "Automatisch",
+            "es": "Automático"
+          }
+        },
+        {
+          "value": "en",
+          "label": {
+            "en": "English",
+            "fr": "English",
+            "de": "English",
+            "es": "English"
+          }
+        },
+        {
+          "value": "fr",
+          "label": {
+            "en": "Français",
+            "fr": "Français",
+            "de": "Français",
+            "es": "Français"
+          }
+        },
+        {
+          "value": "de",
+          "label": {
+            "en": "Deutsch",
+            "fr": "Deutsch",
+            "de": "Deutsch",
+            "es": "Deutsch"
+          }
+        },
+        {
+          "value": "es",
+          "label": {
+            "en": "Español",
+            "fr": "Español",
+            "de": "Español",
+            "es": "Español"
+          }
+        }
+      ],
+      "default": "auto",
       "required": false
     }
   ],
@@ -151,11 +254,15 @@
       "key": "test_connection",
       "label": {
         "en": "Test the connection",
-        "fr": "Tester la connexion"
+        "fr": "Tester la connexion",
+        "de": "Verbindung testen",
+        "es": "Probar la conexión"
       },
       "description": {
         "en": "Checks the sign-in and the API key, and lists the cars of the account.",
-        "fr": "Vérifie la connexion et la clé d’API, et liste les voitures du compte."
+        "fr": "Vérifie la connexion et la clé d’API, et liste les voitures du compte.",
+        "de": "Prüft die Anmeldung und den API-Schlüssel und listet die Fahrzeuge des Kontos auf.",
+        "es": "Comprueba el inicio de sesión y la clave de API, y lista los coches de la cuenta."
       },
       "timeout_seconds": 60
     },
@@ -163,11 +270,15 @@
       "key": "refresh",
       "label": {
         "en": "Read the cars now",
-        "fr": "Lire les voitures maintenant"
+        "fr": "Lire les voitures maintenant",
+        "de": "Fahrzeuge jetzt lesen",
+        "es": "Leer los coches ahora"
       },
       "description": {
         "en": "Reads everything now, without waiting for the next round.",
-        "fr": "Relit tout maintenant, sans attendre le prochain tour."
+        "fr": "Relit tout maintenant, sans attendre le prochain tour.",
+        "de": "Liest jetzt alles, ohne auf die nächste Runde zu warten.",
+        "es": "Lo lee todo ahora, sin esperar a la siguiente ronda."
       },
       "timeout_seconds": 90
     },
@@ -175,11 +286,15 @@
       "key": "disconnect",
       "label": {
         "en": "Disconnect",
-        "fr": "Déconnecter"
+        "fr": "Déconnecter",
+        "de": "Trennen",
+        "es": "Desconectar"
       },
       "description": {
         "en": "Forgets the Volvo ID tokens: reading stops until Connect.",
-        "fr": "Oublie les jetons Volvo ID : la lecture s’arrête jusqu’à Connecter."
+        "fr": "Oublie les jetons Volvo ID : la lecture s’arrête jusqu’à Connecter.",
+        "de": "Verwirft die Volvo-ID-Tokens: Das Lesen stoppt bis zum nächsten „Verbinden“.",
+        "es": "Olvida los tokens de Volvo ID: la lectura se detiene hasta «Conectar»."
       },
       "timeout_seconds": 15
     }
@@ -189,11 +304,15 @@
       "key": "lock_changed",
       "label": {
         "en": "Volvo: locked or unlocked",
-        "fr": "Volvo : verrouillée ou déverrouillée"
+        "fr": "Volvo : verrouillée ou déverrouillée",
+        "de": "Volvo: ver- oder entriegelt",
+        "es": "Volvo: cerrado o abierto"
       },
       "description": {
         "en": "The car is locked or unlocked. Checked at the refresh interval.",
-        "fr": "La voiture est verrouillée ou déverrouillée. Vérifié à l’intervalle de lecture."
+        "fr": "La voiture est verrouillée ou déverrouillée. Vérifié à l’intervalle de lecture.",
+        "de": "Das Fahrzeug wird ver- oder entriegelt. Geprüft im Abfrageintervall.",
+        "es": "El coche se cierra o se abre. Se comprueba en cada intervalo de lectura."
       },
       "fields": [
         {
@@ -202,11 +321,15 @@
           "source": "devices",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           },
           "description": {
             "en": "Leave empty for any car.",
-            "fr": "Laissez vide pour toutes les voitures."
+            "fr": "Laissez vide pour toutes les voitures.",
+            "de": "Leer lassen für alle Fahrzeuge.",
+            "es": "Déjelo vacío para cualquier coche."
           },
           "required": false
         },
@@ -215,21 +338,27 @@
           "type": "select",
           "label": {
             "en": "New state",
-            "fr": "Nouvel état"
+            "fr": "Nouvel état",
+            "de": "Neuer Zustand",
+            "es": "Nuevo estado"
           },
           "options": [
             {
               "value": "locked",
               "label": {
                 "en": "Locked",
-                "fr": "Verrouillée"
+                "fr": "Verrouillée",
+                "de": "Verriegelt",
+                "es": "Cerrado"
               }
             },
             {
               "value": "unlocked",
               "label": {
                 "en": "Unlocked",
-                "fr": "Déverrouillée"
+                "fr": "Déverrouillée",
+                "de": "Entriegelt",
+                "es": "Abierto"
               }
             }
           ],
@@ -242,7 +371,9 @@
           "type": "string",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           }
         },
         {
@@ -250,11 +381,15 @@
           "type": "string",
           "label": {
             "en": "Summary",
-            "fr": "Résumé"
+            "fr": "Résumé",
+            "de": "Zusammenfassung",
+            "es": "Resumen"
           },
           "description": {
             "en": "A sentence ready to put in a message.",
-            "fr": "Une phrase prête à mettre dans un message."
+            "fr": "Une phrase prête à mettre dans un message.",
+            "de": "Ein Satz, der direkt in eine Nachricht passt.",
+            "es": "Una frase lista para poner en un mensaje."
           }
         }
       ]
@@ -263,11 +398,15 @@
       "key": "left_open",
       "label": {
         "en": "Volvo: locked but left open",
-        "fr": "Volvo : verrouillée mais ouverte"
+        "fr": "Volvo : verrouillée mais ouverte",
+        "de": "Volvo: verriegelt, aber offen",
+        "es": "Volvo: cerrado pero abierto"
       },
       "description": {
         "en": "The car is locked while a door, window, sunroof, tailgate or hood is open.",
-        "fr": "La voiture est verrouillée alors qu’une porte, fenêtre, le toit, le hayon ou le capot est ouvert."
+        "fr": "La voiture est verrouillée alors qu’une porte, fenêtre, le toit, le hayon ou le capot est ouvert.",
+        "de": "Das Fahrzeug ist verriegelt, während eine Tür, ein Fenster, das Schiebedach, die Heckklappe oder die Motorhaube offen ist.",
+        "es": "El coche está cerrado mientras una puerta, una ventanilla, el techo solar, el portón trasero o el capó está abierto."
       },
       "fields": [
         {
@@ -276,11 +415,15 @@
           "source": "devices",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           },
           "description": {
             "en": "Leave empty for any car.",
-            "fr": "Laissez vide pour toutes les voitures."
+            "fr": "Laissez vide pour toutes les voitures.",
+            "de": "Leer lassen für alle Fahrzeuge.",
+            "es": "Déjelo vacío para cualquier coche."
           },
           "required": false
         }
@@ -291,7 +434,9 @@
           "type": "string",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           }
         },
         {
@@ -299,7 +444,9 @@
           "type": "string",
           "label": {
             "en": "What is open",
-            "fr": "Ce qui est ouvert"
+            "fr": "Ce qui est ouvert",
+            "de": "Was offen ist",
+            "es": "Lo que está abierto"
           }
         },
         {
@@ -307,11 +454,15 @@
           "type": "string",
           "label": {
             "en": "Summary",
-            "fr": "Résumé"
+            "fr": "Résumé",
+            "de": "Zusammenfassung",
+            "es": "Resumen"
           },
           "description": {
             "en": "A sentence ready to put in a message.",
-            "fr": "Une phrase prête à mettre dans un message."
+            "fr": "Une phrase prête à mettre dans un message.",
+            "de": "Ein Satz, der direkt in eine Nachricht passt.",
+            "es": "Una frase lista para poner en un mensaje."
           }
         }
       ]
@@ -320,11 +471,15 @@
       "key": "engine_changed",
       "label": {
         "en": "Volvo: engine started or stopped",
-        "fr": "Volvo : moteur démarré ou arrêté"
+        "fr": "Volvo : moteur démarré ou arrêté",
+        "de": "Volvo: Motor gestartet oder gestoppt",
+        "es": "Volvo: motor arrancado o parado"
       },
       "description": {
         "en": "The engine (or the drive system of an electric car) starts or stops.",
-        "fr": "Le moteur (ou la chaîne de traction d’une électrique) démarre ou s’arrête."
+        "fr": "Le moteur (ou la chaîne de traction d’une électrique) démarre ou s’arrête.",
+        "de": "Der Motor (oder der Antrieb eines Elektroautos) startet oder stoppt.",
+        "es": "El motor (o el sistema de propulsión de un coche eléctrico) arranca o se para."
       },
       "fields": [
         {
@@ -333,11 +488,15 @@
           "source": "devices",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           },
           "description": {
             "en": "Leave empty for any car.",
-            "fr": "Laissez vide pour toutes les voitures."
+            "fr": "Laissez vide pour toutes les voitures.",
+            "de": "Leer lassen für alle Fahrzeuge.",
+            "es": "Déjelo vacío para cualquier coche."
           },
           "required": false
         },
@@ -346,21 +505,27 @@
           "type": "select",
           "label": {
             "en": "Change",
-            "fr": "Changement"
+            "fr": "Changement",
+            "de": "Änderung",
+            "es": "Cambio"
           },
           "options": [
             {
               "value": "started",
               "label": {
                 "en": "Started",
-                "fr": "Démarré"
+                "fr": "Démarré",
+                "de": "Gestartet",
+                "es": "Arrancado"
               }
             },
             {
               "value": "stopped",
               "label": {
                 "en": "Stopped",
-                "fr": "Arrêté"
+                "fr": "Arrêté",
+                "de": "Gestoppt",
+                "es": "Parado"
               }
             }
           ],
@@ -373,7 +538,9 @@
           "type": "string",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           }
         },
         {
@@ -381,11 +548,15 @@
           "type": "string",
           "label": {
             "en": "Summary",
-            "fr": "Résumé"
+            "fr": "Résumé",
+            "de": "Zusammenfassung",
+            "es": "Resumen"
           },
           "description": {
             "en": "A sentence ready to put in a message.",
-            "fr": "Une phrase prête à mettre dans un message."
+            "fr": "Une phrase prête à mettre dans un message.",
+            "de": "Ein Satz, der direkt in eine Nachricht passt.",
+            "es": "Una frase lista para poner en un mensaje."
           }
         }
       ]
@@ -394,11 +565,15 @@
       "key": "charging_changed",
       "label": {
         "en": "Volvo: charging status changed",
-        "fr": "Volvo : état de la charge modifié"
+        "fr": "Volvo : état de la charge modifié",
+        "de": "Volvo: Ladestatus geändert",
+        "es": "Volvo: estado de carga modificado"
       },
       "description": {
         "en": "Charging starts, completes, stops or fails (electric and plug-in hybrid cars).",
-        "fr": "La charge démarre, se termine, s’arrête ou échoue (électriques et hybrides rechargeables)."
+        "fr": "La charge démarre, se termine, s’arrête ou échoue (électriques et hybrides rechargeables).",
+        "de": "Das Laden beginnt, endet, stoppt oder schlägt fehl (Elektro- und Plug-in-Hybridfahrzeuge).",
+        "es": "La carga empieza, termina, se detiene o falla (coches eléctricos e híbridos enchufables)."
       },
       "fields": [
         {
@@ -407,11 +582,15 @@
           "source": "devices",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           },
           "description": {
             "en": "Leave empty for any car.",
-            "fr": "Laissez vide pour toutes les voitures."
+            "fr": "Laissez vide pour toutes les voitures.",
+            "de": "Leer lassen für alle Fahrzeuge.",
+            "es": "Déjelo vacío para cualquier coche."
           },
           "required": false
         },
@@ -420,49 +599,63 @@
           "type": "select",
           "label": {
             "en": "New status",
-            "fr": "Nouvel état"
+            "fr": "Nouvel état",
+            "de": "Neuer Status",
+            "es": "Nuevo estado"
           },
           "options": [
             {
               "value": "charging",
               "label": {
                 "en": "Charging",
-                "fr": "En charge"
+                "fr": "En charge",
+                "de": "Lädt",
+                "es": "Cargando"
               }
             },
             {
               "value": "done",
               "label": {
                 "en": "Charge complete",
-                "fr": "Charge terminée"
+                "fr": "Charge terminée",
+                "de": "Laden abgeschlossen",
+                "es": "Carga completa"
               }
             },
             {
               "value": "idle",
               "label": {
                 "en": "Not charging",
-                "fr": "Pas en charge"
+                "fr": "Pas en charge",
+                "de": "Lädt nicht",
+                "es": "Sin cargar"
               }
             },
             {
               "value": "scheduled",
               "label": {
                 "en": "Charge scheduled",
-                "fr": "Charge programmée"
+                "fr": "Charge programmée",
+                "de": "Laden geplant",
+                "es": "Carga programada"
               }
             },
             {
               "value": "discharging",
               "label": {
                 "en": "Discharging",
-                "fr": "En décharge"
+                "fr": "En décharge",
+                "de": "Entlädt",
+                "es": "Descargando"
               }
             },
             {
               "value": "error",
               "label": {
                 "en": "Charging error",
-                "fr": "Erreur de charge"
+                "fr": "Erreur de charge",
+                "de": "Ladefehler",
+                "es": "Error de carga"
               }
             }
           ],
@@ -475,7 +668,9 @@
           "type": "string",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           }
         },
         {
@@ -483,7 +678,9 @@
           "type": "string",
           "label": {
             "en": "Status (text)",
-            "fr": "État (texte)"
+            "fr": "État (texte)",
+            "de": "Status (Text)",
+            "es": "Estado (texto)"
           }
         },
         {
@@ -491,7 +688,9 @@
           "type": "number",
           "label": {
             "en": "Battery (%)",
-            "fr": "Batterie (%)"
+            "fr": "Batterie (%)",
+            "de": "Batterie (%)",
+            "es": "Batería (%)"
           }
         },
         {
@@ -499,7 +698,9 @@
           "type": "number",
           "label": {
             "en": "Electric range (km)",
-            "fr": "Autonomie électrique (km)"
+            "fr": "Autonomie électrique (km)",
+            "de": "Elektrische Reichweite (km)",
+            "es": "Autonomía eléctrica (km)"
           }
         },
         {
@@ -507,11 +708,15 @@
           "type": "string",
           "label": {
             "en": "Summary",
-            "fr": "Résumé"
+            "fr": "Résumé",
+            "de": "Zusammenfassung",
+            "es": "Resumen"
           },
           "description": {
             "en": "A sentence ready to put in a message.",
-            "fr": "Une phrase prête à mettre dans un message."
+            "fr": "Une phrase prête à mettre dans un message.",
+            "de": "Ein Satz, der direkt in eine Nachricht passt.",
+            "es": "Una frase lista para poner en un mensaje."
           }
         }
       ]
@@ -520,11 +725,15 @@
       "key": "charger_connection_changed",
       "label": {
         "en": "Volvo: charging cable plugged or unplugged",
-        "fr": "Volvo : câble de charge branché ou débranché"
+        "fr": "Volvo : câble de charge branché ou débranché",
+        "de": "Volvo: Ladekabel ein- oder ausgesteckt",
+        "es": "Volvo: cable de carga conectado o desconectado"
       },
       "description": {
         "en": "The charging cable is plugged in or unplugged.",
-        "fr": "Le câble de charge est branché ou débranché."
+        "fr": "Le câble de charge est branché ou débranché.",
+        "de": "Das Ladekabel wird eingesteckt oder ausgesteckt.",
+        "es": "El cable de carga se conecta o se desconecta."
       },
       "fields": [
         {
@@ -533,11 +742,15 @@
           "source": "devices",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           },
           "description": {
             "en": "Leave empty for any car.",
-            "fr": "Laissez vide pour toutes les voitures."
+            "fr": "Laissez vide pour toutes les voitures.",
+            "de": "Leer lassen für alle Fahrzeuge.",
+            "es": "Déjelo vacío para cualquier coche."
           },
           "required": false
         },
@@ -546,21 +759,27 @@
           "type": "select",
           "label": {
             "en": "Change",
-            "fr": "Changement"
+            "fr": "Changement",
+            "de": "Änderung",
+            "es": "Cambio"
           },
           "options": [
             {
               "value": "connected",
               "label": {
                 "en": "Plugged in",
-                "fr": "Branché"
+                "fr": "Branché",
+                "de": "Eingesteckt",
+                "es": "Conectado"
               }
             },
             {
               "value": "disconnected",
               "label": {
                 "en": "Unplugged",
-                "fr": "Débranché"
+                "fr": "Débranché",
+                "de": "Ausgesteckt",
+                "es": "Desconectado"
               }
             }
           ],
@@ -573,7 +792,9 @@
           "type": "string",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           }
         },
         {
@@ -581,7 +802,9 @@
           "type": "number",
           "label": {
             "en": "Battery (%)",
-            "fr": "Batterie (%)"
+            "fr": "Batterie (%)",
+            "de": "Batterie (%)",
+            "es": "Batería (%)"
           }
         },
         {
@@ -589,11 +812,15 @@
           "type": "string",
           "label": {
             "en": "Summary",
-            "fr": "Résumé"
+            "fr": "Résumé",
+            "de": "Zusammenfassung",
+            "es": "Resumen"
           },
           "description": {
             "en": "A sentence ready to put in a message.",
-            "fr": "Une phrase prête à mettre dans un message."
+            "fr": "Une phrase prête à mettre dans un message.",
+            "de": "Ein Satz, der direkt in eine Nachricht passt.",
+            "es": "Una frase lista para poner en un mensaje."
           }
         }
       ]
@@ -602,11 +829,15 @@
       "key": "home_changed",
       "label": {
         "en": "Volvo: arrived home or left",
-        "fr": "Volvo : arrivée ou départ de la maison"
+        "fr": "Volvo : arrivée ou départ de la maison",
+        "de": "Volvo: zu Hause angekommen oder losgefahren",
+        "es": "Volvo: llegada a casa o salida"
       },
       "description": {
         "en": "The car enters or leaves the home radius. Needs the position of the car and of a house.",
-        "fr": "La voiture entre dans le rayon du domicile ou en sort. Nécessite la position de la voiture et d’une maison."
+        "fr": "La voiture entre dans le rayon du domicile ou en sort. Nécessite la position de la voiture et d’une maison.",
+        "de": "Das Fahrzeug fährt in den Radius um das Zuhause hinein oder verlässt ihn. Erfordert die Position des Fahrzeugs und eines Hauses.",
+        "es": "El coche entra en el radio de la vivienda o sale de él. Requiere la posición del coche y de una vivienda."
       },
       "fields": [
         {
@@ -615,11 +846,15 @@
           "source": "devices",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           },
           "description": {
             "en": "Leave empty for any car.",
-            "fr": "Laissez vide pour toutes les voitures."
+            "fr": "Laissez vide pour toutes les voitures.",
+            "de": "Leer lassen für alle Fahrzeuge.",
+            "es": "Déjelo vacío para cualquier coche."
           },
           "required": false
         },
@@ -628,21 +863,27 @@
           "type": "select",
           "label": {
             "en": "Change",
-            "fr": "Changement"
+            "fr": "Changement",
+            "de": "Änderung",
+            "es": "Cambio"
           },
           "options": [
             {
               "value": "arrived",
               "label": {
                 "en": "Arrived home",
-                "fr": "Arrivée à la maison"
+                "fr": "Arrivée à la maison",
+                "de": "Zu Hause angekommen",
+                "es": "Llegada a casa"
               }
             },
             {
               "value": "left",
               "label": {
                 "en": "Left home",
-                "fr": "Départ de la maison"
+                "fr": "Départ de la maison",
+                "de": "Von zu Hause losgefahren",
+                "es": "Salida de casa"
               }
             }
           ],
@@ -655,7 +896,9 @@
           "type": "string",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           }
         },
         {
@@ -663,7 +906,9 @@
           "type": "number",
           "label": {
             "en": "Distance from home (km)",
-            "fr": "Distance du domicile (km)"
+            "fr": "Distance du domicile (km)",
+            "de": "Entfernung vom Zuhause (km)",
+            "es": "Distancia a la vivienda (km)"
           }
         },
         {
@@ -671,11 +916,15 @@
           "type": "string",
           "label": {
             "en": "Summary",
-            "fr": "Résumé"
+            "fr": "Résumé",
+            "de": "Zusammenfassung",
+            "es": "Resumen"
           },
           "description": {
             "en": "A sentence ready to put in a message.",
-            "fr": "Une phrase prête à mettre dans un message."
+            "fr": "Une phrase prête à mettre dans un message.",
+            "de": "Ein Satz, der direkt in eine Nachricht passt.",
+            "es": "Una frase lista para poner en un mensaje."
           }
         }
       ]
@@ -684,11 +933,15 @@
       "key": "warning_raised",
       "label": {
         "en": "Volvo: new warning",
-        "fr": "Volvo : nouvelle alerte"
+        "fr": "Volvo : nouvelle alerte",
+        "de": "Volvo: neue Warnung",
+        "es": "Volvo: nueva alerta"
       },
       "description": {
         "en": "A new warning: tyre pressure, fluid level, bulb failure or service due.",
-        "fr": "Une nouvelle alerte : pression d’un pneu, niveau d’un liquide, ampoule ou entretien à faire."
+        "fr": "Une nouvelle alerte : pression d’un pneu, niveau d’un liquide, ampoule ou entretien à faire.",
+        "de": "Eine neue Warnung: Reifendruck, Flüssigkeitsstand, defekte Lampe oder fällige Wartung.",
+        "es": "Una nueva alerta: presión de un neumático, nivel de un líquido, bombilla averiada o mantenimiento pendiente."
       },
       "fields": [
         {
@@ -697,11 +950,15 @@
           "source": "devices",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           },
           "description": {
             "en": "Leave empty for any car.",
-            "fr": "Laissez vide pour toutes les voitures."
+            "fr": "Laissez vide pour toutes les voitures.",
+            "de": "Leer lassen für alle Fahrzeuge.",
+            "es": "Déjelo vacío para cualquier coche."
           },
           "required": false
         }
@@ -712,7 +969,9 @@
           "type": "string",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           }
         },
         {
@@ -720,7 +979,9 @@
           "type": "string",
           "label": {
             "en": "Warning (code)",
-            "fr": "Alerte (code)"
+            "fr": "Alerte (code)",
+            "de": "Warnung (Code)",
+            "es": "Alerta (código)"
           }
         },
         {
@@ -728,7 +989,9 @@
           "type": "string",
           "label": {
             "en": "Warning",
-            "fr": "Alerte"
+            "fr": "Alerte",
+            "de": "Warnung",
+            "es": "Alerta"
           }
         },
         {
@@ -736,11 +999,15 @@
           "type": "string",
           "label": {
             "en": "Summary",
-            "fr": "Résumé"
+            "fr": "Résumé",
+            "de": "Zusammenfassung",
+            "es": "Resumen"
           },
           "description": {
             "en": "A sentence ready to put in a message.",
-            "fr": "Une phrase prête à mettre dans un message."
+            "fr": "Une phrase prête à mettre dans un message.",
+            "de": "Ein Satz, der direkt in eine Nachricht passt.",
+            "es": "Una frase lista para poner en un mensaje."
           }
         }
       ]
@@ -749,11 +1016,15 @@
       "key": "authorization_expired",
       "label": {
         "en": "Volvo: sign in again",
-        "fr": "Volvo : reconnexion nécessaire"
+        "fr": "Volvo : reconnexion nécessaire",
+        "de": "Volvo: erneute Anmeldung nötig",
+        "es": "Volvo: nuevo inicio de sesión necesario"
       },
       "description": {
         "en": "Volvo ended the authorization of Gladys: reading stops until you click Connect again.",
-        "fr": "Volvo a mis fin à l’autorisation de Gladys : la lecture s’arrête jusqu’à un nouveau clic sur Connecter."
+        "fr": "Volvo a mis fin à l’autorisation de Gladys : la lecture s’arrête jusqu’à un nouveau clic sur Connecter.",
+        "de": "Volvo hat die Autorisierung von Gladys beendet: Das Lesen stoppt, bis Sie erneut auf „Verbinden“ klicken.",
+        "es": "Volvo ha puesto fin a la autorización de Gladys: la lectura se detiene hasta que vuelva a hacer clic en «Conectar»."
       },
       "fields": [],
       "variables": [
@@ -762,11 +1033,15 @@
           "type": "string",
           "label": {
             "en": "Summary",
-            "fr": "Résumé"
+            "fr": "Résumé",
+            "de": "Zusammenfassung",
+            "es": "Resumen"
           },
           "description": {
             "en": "A sentence ready to put in a message.",
-            "fr": "Une phrase prête à mettre dans un message."
+            "fr": "Une phrase prête à mettre dans un message.",
+            "de": "Ein Satz, der direkt in eine Nachricht passt.",
+            "es": "Una frase lista para poner en un mensaje."
           }
         }
       ]
@@ -777,11 +1052,15 @@
       "key": "send_command",
       "label": {
         "en": "Volvo: send a command",
-        "fr": "Volvo : envoyer une commande"
+        "fr": "Volvo : envoyer une commande",
+        "de": "Volvo: Befehl senden",
+        "es": "Volvo: enviar un comando"
       },
       "description": {
         "en": "Lock, unlock, climate, honk or flash, remote engine start. Waits for the car.",
-        "fr": "Verrouiller, déverrouiller, climatiser, klaxonner, démarrer le moteur à distance. Attend la voiture."
+        "fr": "Verrouiller, déverrouiller, climatiser, klaxonner, démarrer le moteur à distance. Attend la voiture.",
+        "de": "Verriegeln, entriegeln, klimatisieren, hupen, Motor aus der Ferne starten. Wartet auf das Fahrzeug.",
+        "es": "Cerrar, abrir, climatizar, tocar el claxon, arrancar el motor a distancia. Espera al coche."
       },
       "timeout_seconds": 120,
       "fields": [
@@ -791,11 +1070,15 @@
           "source": "devices",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           },
           "description": {
             "en": "Leave empty for the first car.",
-            "fr": "Laissez vide pour la première voiture."
+            "fr": "Laissez vide pour la première voiture.",
+            "de": "Leer lassen für das erste Fahrzeug.",
+            "es": "Déjelo vacío para el primer coche."
           },
           "required": false
         },
@@ -804,77 +1087,99 @@
           "type": "select",
           "label": {
             "en": "Command",
-            "fr": "Commande"
+            "fr": "Commande",
+            "de": "Befehl",
+            "es": "Comando"
           },
           "options": [
             {
               "value": "lock",
               "label": {
                 "en": "Lock",
-                "fr": "Verrouiller"
+                "fr": "Verrouiller",
+                "de": "Verriegeln",
+                "es": "Cerrar"
               }
             },
             {
               "value": "unlock",
               "label": {
                 "en": "Unlock",
-                "fr": "Déverrouiller"
+                "fr": "Déverrouiller",
+                "de": "Entriegeln",
+                "es": "Abrir"
               }
             },
             {
               "value": "lock_reduced_guard",
               "label": {
                 "en": "Lock with reduced guard",
-                "fr": "Verrouiller (surveillance réduite)"
+                "fr": "Verrouiller (surveillance réduite)",
+                "de": "Verriegeln (reduzierte Überwachung)",
+                "es": "Cerrar (vigilancia reducida)"
               }
             },
             {
               "value": "climatization_start",
               "label": {
                 "en": "Start the climate",
-                "fr": "Démarrer la climatisation"
+                "fr": "Démarrer la climatisation",
+                "de": "Klimatisierung starten",
+                "es": "Encender la climatización"
               }
             },
             {
               "value": "climatization_stop",
               "label": {
                 "en": "Stop the climate",
-                "fr": "Arrêter la climatisation"
+                "fr": "Arrêter la climatisation",
+                "de": "Klimatisierung stoppen",
+                "es": "Apagar la climatización"
               }
             },
             {
               "value": "flash",
               "label": {
                 "en": "Flash the lights",
-                "fr": "Faire clignoter les feux"
+                "fr": "Faire clignoter les feux",
+                "de": "Lichter blinken lassen",
+                "es": "Hacer parpadear las luces"
               }
             },
             {
               "value": "honk",
               "label": {
                 "en": "Honk",
-                "fr": "Klaxonner"
+                "fr": "Klaxonner",
+                "de": "Hupen",
+                "es": "Tocar el claxon"
               }
             },
             {
               "value": "honk_flash",
               "label": {
                 "en": "Honk and flash",
-                "fr": "Klaxonner et clignoter"
+                "fr": "Klaxonner et clignoter",
+                "de": "Hupen und blinken",
+                "es": "Claxon y luces"
               }
             },
             {
               "value": "engine_start",
               "label": {
                 "en": "Start the engine",
-                "fr": "Démarrer le moteur"
+                "fr": "Démarrer le moteur",
+                "de": "Motor starten",
+                "es": "Arrancar el motor"
               }
             },
             {
               "value": "engine_stop",
               "label": {
                 "en": "Stop the engine",
-                "fr": "Arrêter le moteur"
+                "fr": "Arrêter le moteur",
+                "de": "Motor stoppen",
+                "es": "Parar el motor"
               }
             }
           ],
@@ -885,11 +1190,15 @@
           "type": "number",
           "label": {
             "en": "Engine runtime (min)",
-            "fr": "Durée moteur (min)"
+            "fr": "Durée moteur (min)",
+            "de": "Motorlaufzeit (min)",
+            "es": "Duración del motor (min)"
           },
           "description": {
             "en": "Remote engine start only: 1 to 15 minutes.",
-            "fr": "Démarrage du moteur uniquement : 1 à 15 minutes."
+            "fr": "Démarrage du moteur uniquement : 1 à 15 minutes.",
+            "de": "Nur für den Motorstart: 1 bis 15 Minuten.",
+            "es": "Solo para el arranque del motor: de 1 a 15 minutos."
           },
           "min": 1,
           "max": 15,
@@ -903,7 +1212,9 @@
           "type": "boolean",
           "label": {
             "en": "Carried out",
-            "fr": "Exécutée"
+            "fr": "Exécutée",
+            "de": "Ausgeführt",
+            "es": "Ejecutado"
           }
         },
         {
@@ -911,7 +1222,9 @@
           "type": "string",
           "label": {
             "en": "Volvo status",
-            "fr": "Statut Volvo"
+            "fr": "Statut Volvo",
+            "de": "Volvo-Status",
+            "es": "Estado de Volvo"
           }
         },
         {
@@ -919,7 +1232,9 @@
           "type": "string",
           "label": {
             "en": "Summary",
-            "fr": "Résumé"
+            "fr": "Résumé",
+            "de": "Zusammenfassung",
+            "es": "Resumen"
           }
         }
       ]
@@ -928,11 +1243,15 @@
       "key": "get_status",
       "label": {
         "en": "Volvo: car status",
-        "fr": "Volvo : état de la voiture"
+        "fr": "Volvo : état de la voiture",
+        "de": "Volvo: Fahrzeugstatus",
+        "es": "Volvo: estado del coche"
       },
       "description": {
         "en": "Lock, openings, battery or fuel, range, charge, position and warnings.",
-        "fr": "Verrouillage, ouvrants, batterie ou carburant, autonomie, charge, position et alertes."
+        "fr": "Verrouillage, ouvrants, batterie ou carburant, autonomie, charge, position et alertes.",
+        "de": "Verriegelung, Öffnungen, Batterie oder Kraftstoff, Reichweite, Laden, Position und Warnungen.",
+        "es": "Cierre, aperturas, batería o combustible, autonomía, carga, posición y alertas."
       },
       "timeout_seconds": 60,
       "fields": [
@@ -942,11 +1261,15 @@
           "source": "devices",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           },
           "description": {
             "en": "Leave empty for the first car.",
-            "fr": "Laissez vide pour la première voiture."
+            "fr": "Laissez vide pour la première voiture.",
+            "de": "Leer lassen für das erste Fahrzeug.",
+            "es": "Déjelo vacío para el primer coche."
           },
           "required": false
         },
@@ -955,11 +1278,15 @@
           "type": "boolean",
           "label": {
             "en": "Read the car now",
-            "fr": "Lire la voiture maintenant"
+            "fr": "Lire la voiture maintenant",
+            "de": "Fahrzeug jetzt lesen",
+            "es": "Leer el coche ahora"
           },
           "description": {
             "en": "Otherwise the last reading is used (at most one refresh interval old).",
-            "fr": "Sinon la dernière lecture est utilisée (au plus un intervalle de lecture)."
+            "fr": "Sinon la dernière lecture est utilisée (au plus un intervalle de lecture).",
+            "de": "Sonst wird der letzte Wert verwendet (höchstens ein Abfrageintervall alt).",
+            "es": "Si no, se usa la última lectura (como mucho de un intervalo de lectura)."
           },
           "default": false,
           "required": false
@@ -971,7 +1298,9 @@
           "type": "string",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           }
         },
         {
@@ -979,7 +1308,9 @@
           "type": "boolean",
           "label": {
             "en": "Locked",
-            "fr": "Verrouillée"
+            "fr": "Verrouillée",
+            "de": "Verriegelt",
+            "es": "Cerrado"
           }
         },
         {
@@ -987,7 +1318,9 @@
           "type": "boolean",
           "label": {
             "en": "All closed",
-            "fr": "Tout est fermé"
+            "fr": "Tout est fermé",
+            "de": "Alles geschlossen",
+            "es": "Todo cerrado"
           }
         },
         {
@@ -995,7 +1328,9 @@
           "type": "string",
           "label": {
             "en": "What is open",
-            "fr": "Ce qui est ouvert"
+            "fr": "Ce qui est ouvert",
+            "de": "Was offen ist",
+            "es": "Lo que está abierto"
           }
         },
         {
@@ -1003,7 +1338,9 @@
           "type": "number",
           "label": {
             "en": "Battery (%)",
-            "fr": "Batterie (%)"
+            "fr": "Batterie (%)",
+            "de": "Batterie (%)",
+            "es": "Batería (%)"
           }
         },
         {
@@ -1011,7 +1348,9 @@
           "type": "number",
           "label": {
             "en": "Electric range (km)",
-            "fr": "Autonomie électrique (km)"
+            "fr": "Autonomie électrique (km)",
+            "de": "Elektrische Reichweite (km)",
+            "es": "Autonomía eléctrica (km)"
           }
         },
         {
@@ -1019,7 +1358,9 @@
           "type": "number",
           "label": {
             "en": "Fuel (L)",
-            "fr": "Carburant (L)"
+            "fr": "Carburant (L)",
+            "de": "Kraftstoff (L)",
+            "es": "Combustible (L)"
           }
         },
         {
@@ -1027,7 +1368,9 @@
           "type": "number",
           "label": {
             "en": "Fuel range (km)",
-            "fr": "Autonomie carburant (km)"
+            "fr": "Autonomie carburant (km)",
+            "de": "Reichweite Kraftstoff (km)",
+            "es": "Autonomía de combustible (km)"
           }
         },
         {
@@ -1035,7 +1378,9 @@
           "type": "string",
           "label": {
             "en": "Charging status",
-            "fr": "État de la charge"
+            "fr": "État de la charge",
+            "de": "Ladestatus",
+            "es": "Estado de carga"
           }
         },
         {
@@ -1043,7 +1388,9 @@
           "type": "boolean",
           "label": {
             "en": "Cable plugged in",
-            "fr": "Câble branché"
+            "fr": "Câble branché",
+            "de": "Kabel eingesteckt",
+            "es": "Cable conectado"
           }
         },
         {
@@ -1051,7 +1398,9 @@
           "type": "boolean",
           "label": {
             "en": "Engine running",
-            "fr": "Moteur en marche"
+            "fr": "Moteur en marche",
+            "de": "Motor läuft",
+            "es": "Motor en marcha"
           }
         },
         {
@@ -1059,7 +1408,9 @@
           "type": "number",
           "label": {
             "en": "Odometer (km)",
-            "fr": "Kilométrage (km)"
+            "fr": "Kilométrage (km)",
+            "de": "Kilometerstand (km)",
+            "es": "Kilometraje (km)"
           }
         },
         {
@@ -1067,7 +1418,9 @@
           "type": "boolean",
           "label": {
             "en": "Home",
-            "fr": "À la maison"
+            "fr": "À la maison",
+            "de": "Zu Hause",
+            "es": "En casa"
           }
         },
         {
@@ -1075,7 +1428,9 @@
           "type": "number",
           "label": {
             "en": "Distance from home (km)",
-            "fr": "Distance du domicile (km)"
+            "fr": "Distance du domicile (km)",
+            "de": "Entfernung vom Zuhause (km)",
+            "es": "Distancia a la vivienda (km)"
           }
         },
         {
@@ -1083,7 +1438,9 @@
           "type": "number",
           "label": {
             "en": "Latitude",
-            "fr": "Latitude"
+            "fr": "Latitude",
+            "de": "Breitengrad",
+            "es": "Latitud"
           }
         },
         {
@@ -1091,7 +1448,9 @@
           "type": "number",
           "label": {
             "en": "Longitude",
-            "fr": "Longitude"
+            "fr": "Longitude",
+            "de": "Längengrad",
+            "es": "Longitud"
           }
         },
         {
@@ -1099,7 +1458,9 @@
           "type": "string",
           "label": {
             "en": "Map link",
-            "fr": "Lien vers la carte"
+            "fr": "Lien vers la carte",
+            "de": "Link zur Karte",
+            "es": "Enlace al mapa"
           }
         },
         {
@@ -1107,7 +1468,9 @@
           "type": "string",
           "label": {
             "en": "Warnings",
-            "fr": "Alertes"
+            "fr": "Alertes",
+            "de": "Warnungen",
+            "es": "Alertas"
           }
         },
         {
@@ -1115,11 +1478,15 @@
           "type": "string",
           "label": {
             "en": "Summary",
-            "fr": "Résumé"
+            "fr": "Résumé",
+            "de": "Zusammenfassung",
+            "es": "Resumen"
           },
           "description": {
             "en": "A sentence ready to put in a message.",
-            "fr": "Une phrase prête à mettre dans un message."
+            "fr": "Une phrase prête à mettre dans un message.",
+            "de": "Ein Satz, der direkt in eine Nachricht passt.",
+            "es": "Una frase lista para poner en un mensaje."
           }
         }
       ]
@@ -1130,11 +1497,15 @@
       "key": "vehicle",
       "label": {
         "en": "Volvo car",
-        "fr": "Voiture Volvo"
+        "fr": "Voiture Volvo",
+        "de": "Volvo-Fahrzeug",
+        "es": "Coche Volvo"
       },
       "description": {
         "en": "The car with its picture, battery or fuel, range, lock, openings and quick buttons.",
-        "fr": "La voiture avec sa photo, batterie ou carburant, autonomie, verrouillage, ouvrants et boutons."
+        "fr": "La voiture avec sa photo, batterie ou carburant, autonomie, verrouillage, ouvrants et boutons.",
+        "de": "Das Fahrzeug mit Bild, Batterie oder Kraftstoff, Reichweite, Verriegelung, Öffnungen und Tasten.",
+        "es": "El coche con su foto, batería o combustible, autonomía, cierre, aperturas y botones."
       },
       "icon": "truck",
       "settings": [
@@ -1144,11 +1515,15 @@
           "source": "devices",
           "label": {
             "en": "Car",
-            "fr": "Voiture"
+            "fr": "Voiture",
+            "de": "Fahrzeug",
+            "es": "Coche"
           },
           "description": {
             "en": "Leave empty for the first car.",
-            "fr": "Laissez vide pour la première voiture."
+            "fr": "Laissez vide pour la première voiture.",
+            "de": "Leer lassen für das erste Fahrzeug.",
+            "es": "Déjelo vacío para el primer coche."
           },
           "required": false
         },
@@ -1157,11 +1532,15 @@
           "type": "boolean",
           "label": {
             "en": "Show the buttons",
-            "fr": "Afficher les boutons"
+            "fr": "Afficher les boutons",
+            "de": "Tasten anzeigen",
+            "es": "Mostrar los botones"
           },
           "description": {
             "en": "Lock/unlock, climate, flash the lights, map.",
-            "fr": "Verrouiller/déverrouiller, climatiser, faire clignoter, carte."
+            "fr": "Verrouiller/déverrouiller, climatiser, faire clignoter, carte.",
+            "de": "Ver-/Entriegeln, Klima, Lichter blinken, Karte.",
+            "es": "Cerrar/abrir, climatización, luces, mapa."
           },
           "default": true,
           "required": false
