@@ -77,6 +77,8 @@ function resourcesOf(info, pace) {
  * @param {Function} options.getHomeRadius - `() => number`, meters.
  * @param {Function} options.getHouses - `() => Array`, the houses of Gladys.
  * @param {Function} options.onReading - `async (info, reading, { events, previous })`.
+ * @param {Function} [options.onCarRead] - `async (info, { errors, succeeded })`,
+ * after each car was read (the transport badge), unless the sign-in was refused.
  * @param {Function} [options.onRoundEnd] - `async ({ errors, succeeded, rateLimited,
  * paused })`, after every round that read something.
  * @param {Function} [options.onAuthLost] - `async (error)`: sign in again.
@@ -92,6 +94,7 @@ function createPoller({
   getHomeRadius,
   getHouses,
   onReading,
+  onCarRead = async () => {},
   onRoundEnd = async () => {},
   onAuthLost = async () => {},
   logger,
@@ -232,16 +235,21 @@ function createPoller({
       carErrors
         .filter((err) => !err?.rateLimited)
         .forEach((err) => logger.warn(`${car.info.model}: ${err.message}`));
-      if (Object.keys(car.raw).length === 0) {
-        continue;
+      if (Object.keys(car.raw).length > 0) {
+        const previous = car.reading;
+        const reading = readingOf(car);
+        car.reading = reading;
+        try {
+          await onReading(car.info, reading, { events: detectEvents(previous, reading), previous });
+        } catch (err) {
+          logger.error(`Unable to handle the reading of ${car.info.model}`, err);
+        }
       }
-      const previous = car.reading;
-      const reading = readingOf(car);
-      car.reading = reading;
+      // After the reading: the badge follows the availability just read.
       try {
-        await onReading(car.info, reading, { events: detectEvents(previous, reading), previous });
+        await onCarRead(car.info, outcome);
       } catch (err) {
-        logger.error(`Unable to handle the reading of ${car.info.model}`, err);
+        logger.error(`Unable to handle the outcome of ${car.info.model}`, err);
       }
       if (limited) {
         break;
