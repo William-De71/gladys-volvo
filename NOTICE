@@ -1,0 +1,15 @@
+gladys-volvo
+Copyright 2026 William-De71
+
+This product includes software developed by William-De71
+(https://github.com/William-De71/gladys-volvo), licensed under the Apache
+License, Version 2.0.
+
+The test fixtures in test/fixtures/home-assistant.json are recorded answers of
+the Volvo Cars APIs taken from the tests of Home Assistant's `volvo`
+integration (https://github.com/home-assistant/core), Copyright Home Assistant
+contributors, licensed under the Apache License, Version 2.0.
+
+Volvo, the Volvo logo and the names of the Volvo models are trademarks of
+Volvo Car Corporation. This project is not affiliated with, endorsed by or
+sponsored by Volvo Cars.
