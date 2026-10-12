@@ -10,7 +10,9 @@
 //
 // The categories are the "electrical vehicle" ones of Gladys (the only car
 // categories), used for every engine: the odometer or the doors of a diesel
-// are no different. Fuel and service distances use the generic sensors.
+// are no different. Fuel and service distances use the generic sensors, with
+// the `decimal` type: `distance-sensor` + `integer` has no icon nor label in
+// the Gladys UI (changed in 1.1.0, see test/structure.test.js).
 //
 // External ids: ext:<selector>:vehicle:<VIN>[:<feature>].
 // -----------------------------------------------------------------------------
@@ -207,7 +209,7 @@ const FEATURES = [
     name: 'featureFuelRange',
     shape: () => ({
       category: CATEGORIES.DISTANCE_SENSOR,
-      type: TYPES.SENSOR.INTEGER,
+      type: TYPES.SENSOR.DECIMAL,
       unit: UNITS.KM,
       min: 0,
       max: 3000,
@@ -306,7 +308,7 @@ const FEATURES = [
     name: 'featureServiceDistance',
     shape: () => ({
       category: CATEGORIES.DISTANCE_SENSOR,
-      type: TYPES.SENSOR.INTEGER,
+      type: TYPES.SENSOR.DECIMAL,
       unit: UNITS.KM,
       min: -100000,
       max: 100000,
