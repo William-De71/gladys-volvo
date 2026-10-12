@@ -707,7 +707,8 @@ export function createApp(gladys, { fetchImpl = fetch } = {}) {
   });
 
   // Gladys drops the states of a feature that does not exist yet: publish them
-  // all once the car is created.
+  // all once the car is created, and refresh the widget, whose tiles bound to
+  // the car were left out until now.
   gladys.onDeviceCreated(async (device) => {
     await refreshCreatedDevices();
     const parsed = parseExternalId(device.external_id);
@@ -721,6 +722,7 @@ export function createApp(gladys, { fetchImpl = fetch } = {}) {
       transports.delete(device.external_id);
       await publishTransport(car.info, car.reading);
     }
+    gladys.requestWidgetRefresh(WIDGETS.VEHICLE);
   });
 
   gladys.onDeviceDeleted(refreshCreatedDevices);
