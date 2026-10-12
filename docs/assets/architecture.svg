@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" font-family="Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Architecture of the Volvo integration (illustration)</title>
+  <desc id="desc">The Gladys core talks to the integration container over the SDK (WebSocket and HTTP host API). The container reads the Volvo Cars APIs over HTTPS with the user's Volvo ID tokens and VCC API key; the car talks only to the Volvo cloud.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#4a5568"/>
+    </marker>
+  </defs>
+  <rect width="960" height="400" fill="#ffffff"/>
+  <text x="24" y="36" font-size="20" font-weight="bold" fill="#1a202c">gladys-volvo — architecture</text>
+  <text x="936" y="36" font-size="13" fill="#718096" text-anchor="end">Illustration, not a screenshot</text>
+
+  <!-- Gladys -->
+  <rect x="24" y="80" width="250" height="270" rx="12" fill="#ebf4ff" stroke="#2f6fb5" stroke-width="2"/>
+  <text x="149" y="110" font-size="17" font-weight="bold" fill="#2f6fb5" text-anchor="middle">Gladys Assistant (core)</text>
+  <g font-size="14" fill="#1a202c">
+    <text x="44" y="146">Discovery → device per car</text>
+    <text x="44" y="176">Device states, history</text>
+    <text x="44" y="206">Cloud / Unreachable badge</text>
+    <text x="44" y="236">Scenes: 8 triggers, 2 actions</text>
+    <text x="44" y="266">Dashboard: Volvo car widget</text>
+    <text x="44" y="296">Configuration + Connect</text>
+    <text x="44" y="326">(OAuth2 redirect page)</text>
+  </g>
+
+  <!-- Container -->
+  <rect x="355" y="80" width="270" height="270" rx="12" fill="#f0fff4" stroke="#2f855a" stroke-width="2"/>
+  <text x="490" y="110" font-size="17" font-weight="bold" fill="#2f855a" text-anchor="middle">Integration container</text>
+  <g font-size="14" fill="#1a202c">
+    <text x="375" y="146">app.js — SDK handlers</text>
+    <text x="375" y="176">poller.js — live + 30 min paces</text>
+    <text x="375" y="206">oauth.js — PKCE, token rotation</text>
+    <text x="375" y="236">device / events / widgets</text>
+    <text x="375" y="266">transport.js — badge</text>
+    <text x="375" y="296">Node 24, read-only rootfs,</text>
+    <text x="375" y="326">non-root user, /data volume</text>
+  </g>
+
+  <!-- Volvo -->
+  <rect x="706" y="80" width="230" height="170" rx="12" fill="#fffaf0" stroke="#c05621" stroke-width="2"/>
+  <text x="821" y="110" font-size="17" font-weight="bold" fill="#c05621" text-anchor="middle">Volvo Cars APIs</text>
+  <g font-size="14" fill="#1a202c">
+    <text x="726" y="146">Connected Vehicle v2</text>
+    <text x="726" y="176">Energy v2</text>
+    <text x="726" y="206">Location v1</text>
+    <text x="726" y="236">Volvo ID (OAuth2)</text>
+  </g>
+  <rect x="706" y="280" width="230" height="70" rx="12" fill="#f7fafc" stroke="#4a5568" stroke-width="2"/>
+  <text x="821" y="321" font-size="16" font-weight="bold" fill="#4a5568" text-anchor="middle">Your Volvo</text>
+
+  <!-- Arrows -->
+  <line x1="276" y1="190" x2="351" y2="190" stroke="#4a5568" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="314" y="178" font-size="12" fill="#4a5568" text-anchor="middle">SDK</text>
+  <text x="314" y="210" font-size="12" fill="#4a5568" text-anchor="middle">WS + HTTP</text>
+  <line x1="627" y1="165" x2="702" y2="165" stroke="#4a5568" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="664" y="153" font-size="12" fill="#4a5568" text-anchor="middle">HTTPS</text>
+  <text x="664" y="185" font-size="12" fill="#4a5568" text-anchor="middle">cloud</text>
+  <line x1="821" y1="252" x2="821" y2="276" stroke="#4a5568" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="831" y="269" font-size="12" fill="#4a5568">mobile network</text>
+</svg>
