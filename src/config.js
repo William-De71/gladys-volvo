@@ -8,7 +8,12 @@
 //   - `client_secret`  (it gives the Volvo ID sign-in, see oauth.js);
 //   - `volvo_account`  the Connect button (oauth2 field, no stored value);
 //   - `poll_interval`  how often the live data is read, in minutes;
-//   - `home_radius`    the distance from home (m) under which a car is home.
+//   - `home_radius`    the distance from home (m) under which a car is home;
+//   - `language`       language of the texts the integration writes outside
+//                      a widget request (device names, text states, scene
+//                      summaries): `auto` = the language of the last widget
+//                      request, else en / fr / de / es. Gladys does not send
+//                      the language with a poll or a scene action.
 //
 // Internal keys, outside the config_schema (never shown in the UI):
 //   - `access_token` / `refresh_token` / `token_expires_at`  the Volvo ID
@@ -28,6 +33,8 @@ const POLL_INTERVAL = { min: 2, max: 60, default: 5 };
 // Meters.
 const HOME_RADIUS = { min: 50, max: 5000, default: 200 };
 const ACCOUNT_FIELD = 'volvo_account';
+const LANGUAGES = ['en', 'fr', 'de', 'es'];
+const AUTO_LANGUAGE = 'auto';
 
 const INTERNAL_KEYS = {
   accessToken: 'access_token',
@@ -66,10 +73,21 @@ function readString(raw) {
 }
 
 /**
+ * @description Read the language setting.
+ * @param {unknown} raw - The raw value.
+ * @returns {string} `auto`, or a supported language.
+ * @example
+ * readLanguageSetting('de'); // -> 'de'
+ */
+function readLanguageSetting(raw) {
+  return LANGUAGES.includes(raw) ? raw : AUTO_LANGUAGE;
+}
+
+/**
  * @description Normalize the raw config object from the host API.
  * @param {object} [rawConfig] - The raw config values.
  * @returns {{ apiKey: string, clientId: string, clientSecret: string,
- * pollInterval: number, homeRadius: number, tokens: { accessToken: string,
+ * pollInterval: number, homeRadius: number, language: string, tokens: { accessToken: string,
  * refreshToken: string, expiresAt: number } }} The config (poll interval in
  * minutes, radius in meters).
  * @example
@@ -84,6 +102,7 @@ function normalizeConfig(rawConfig = {}) {
     clientSecret: readString(config.client_secret),
     pollInterval: readNumber(config.poll_interval, POLL_INTERVAL),
     homeRadius: readNumber(config.home_radius, HOME_RADIUS),
+    language: readLanguageSetting(config.language),
     tokens: {
       accessToken: readString(config[INTERNAL_KEYS.accessToken]),
       refreshToken: readString(config[INTERNAL_KEYS.refreshToken]),
@@ -132,6 +151,9 @@ export {
   HOME_RADIUS,
   ACCOUNT_FIELD,
   INTERNAL_KEYS,
+  LANGUAGES,
+  AUTO_LANGUAGE,
+  readLanguageSetting,
   normalizeConfig,
   hasClient,
   isReady,

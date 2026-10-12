@@ -39,10 +39,11 @@ The **Test the connection** button checks the key and the sign-in, and lists the
 
 ### Options
 
-| Field                | Role                                                                                                           |
-| -------------------- | -------------------------------------------------------------------------------------------------------------- |
-| **Refresh interval** | 5 minutes by default (2 to 60): lock, doors, battery, charging, position. It is also how fast the scenes react |
-| **Home radius**      | 200 m by default: closer than that, the car is "home" (distance from home, arrived and left scenes)            |
+| Field                     | Role                                                                                                                                                |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Refresh interval**      | 5 minutes by default (2 to 60): lock, doors, battery, charging, position. It is also how fast the scenes react                                      |
+| **Home radius**           | 200 m by default: closer than that, the car is "home" (distance from home, arrived and left scenes)                                                 |
+| **Language of the texts** | Automatic by default (the language of your dashboard): device names, charging status, warnings, scene summaries. English, French, German or Spanish |
 
 Service, warnings, odometer and tyres are read every 30 minutes. At 5 minutes, count about 2,000 requests a day per car.
 
@@ -81,6 +82,10 @@ History is kept: chart of the battery level, of the odometer… The usual scenes
 **Climate**: Volvo does not tell whether the climate is running. Gladys shows the last command, and goes back to off after 30 minutes.
 
 **Commands**: Volvo answers once the car has carried the order out, which can take up to a minute (car asleep). Gladys sends the command in the background and reads the car again about twenty seconds later.
+
+**Cloud badge**: on the **Devices** screen, each car carries a **Cloud** badge while Volvo answers for it, **Unreachable** when no reading succeeds. An orange dot means Volvo says the car cannot run remote commands right now (no connection, car in use, power saving mode, software update): hover over the badge to read the reason.
+
+**Updating from 1.0.x**: the **Fuel range** and **Distance to service** features had no icon in Gladys. To get it, open the **Discovery** tab and click **Update** on your car. History, room and scenes are kept; a car not updated keeps working as before.
 
 ## Scenes: triggers
 
@@ -134,3 +139,5 @@ The **Volvo car** widget shows the picture of your car (exact model and colour),
 | "Volvo ended the authorization"              | end of the authorization period of the application: click Connect                                                 |
 | No position nor distance from home           | the position is not available in your country, or your house is not located in Gladys                             |
 | A command has no effect                      | car deeply asleep or out of network: the command fails after a while; the logs of the integration show the status |
+| Orange dot on the Cloud badge                | Volvo says the car cannot run remote commands right now: the reason shows when hovering over the badge            |
+| Texts in the wrong language                  | set **Language of the texts** in the configuration; in Automatic, the language of the last dashboard opened wins  |

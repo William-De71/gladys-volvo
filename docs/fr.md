@@ -39,10 +39,11 @@ Le bouton **Tester la connexion** vérifie la clé et la connexion, et liste les
 
 ### Options
 
-| Champ                     | Rôle                                                                                                                             |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| **Intervalle de lecture** | 5 minutes par défaut (de 2 à 60) : verrouillage, portes, batterie, charge, position. C'est aussi le délai de réaction des scènes |
-| **Rayon du domicile**     | 200 m par défaut : en dessous, la voiture est « à la maison » (distance du domicile, scènes d'arrivée et de départ)              |
+| Champ                     | Rôle                                                                                                                                                                      |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Intervalle de lecture** | 5 minutes par défaut (de 2 à 60) : verrouillage, portes, batterie, charge, position. C'est aussi le délai de réaction des scènes                                          |
+| **Rayon du domicile**     | 200 m par défaut : en dessous, la voiture est « à la maison » (distance du domicile, scènes d'arrivée et de départ)                                                       |
+| **Langue des textes**     | Automatique par défaut (la langue de votre tableau de bord) : noms des appareils, état de la charge, alertes, résumés des scènes. Anglais, français, allemand ou espagnol |
 
 L'entretien, les alertes, le kilométrage et la pression des pneus sont lus toutes les 30 minutes. À 5 minutes, comptez environ 2 000 requêtes par jour et par voiture.
 
@@ -81,6 +82,10 @@ L'historique est conservé : graphique du niveau de batterie, du kilométrage…
 **Climatisation** : Volvo ne dit pas si la climatisation tourne. Gladys affiche donc la dernière commande, et repasse à l'arrêt au bout de 30 minutes.
 
 **Commandes** : Volvo répond une fois que la voiture a exécuté l'ordre, ce qui peut prendre jusqu'à une minute (voiture en veille). Gladys envoie la commande en arrière-plan et met la voiture à jour une vingtaine de secondes après.
+
+**Badge Cloud** : dans l'écran **Appareils**, chaque voiture porte un badge **Cloud** tant que Volvo répond pour elle, **Injoignable** quand aucune lecture n'aboutit. Une pastille orange signifie que Volvo indique que la voiture ne peut pas exécuter de commandes à distance pour l'instant (pas de connexion, voiture en cours d'utilisation, mode économie d'énergie, mise à jour logicielle) : survolez le badge pour lire la raison.
+
+**Mise à jour depuis la 1.0.x** : les fonctionnalités **Autonomie carburant** et **Distance avant l'entretien** n'avaient pas d'icône dans Gladys. Pour l'obtenir, ouvrez l'onglet **Découverte** et cliquez sur **Mettre à jour** sur votre voiture. L'historique, la pièce et les scènes sont conservés ; une voiture non mise à jour continue de fonctionner comme avant.
 
 ## Scènes : déclencheurs
 
@@ -134,3 +139,5 @@ Le widget **Voiture Volvo** affiche la photo de votre voiture (modèle et couleu
 | « Volvo a mis fin à l'autorisation »                | fin de la période d'autorisation de l'application : cliquez sur Connecter                                                              |
 | Pas de position ni de distance du domicile          | la position n'est pas disponible dans votre pays, ou votre maison n'est pas localisée dans Gladys                                      |
 | Une commande reste sans effet                       | voiture en veille profonde ou sans réseau : la commande échoue au bout d'un moment ; les journaux de l'intégration indiquent le statut |
+| Pastille orange sur le badge Cloud                  | Volvo indique que la voiture ne peut pas exécuter de commandes à distance pour l'instant : la raison s'affiche au survol du badge      |
+| Textes dans la mauvaise langue                      | réglez **Langue des textes** dans la configuration ; en Automatique, c'est la langue du dernier tableau de bord ouvert qui l'emporte   |
