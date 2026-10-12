@@ -1,0 +1,969 @@
+{
+  "generated_from": "v1.0.0 (c12d303)",
+  "discovery": {
+    "xc40_electric_2024": {
+      "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567",
+      "should_poll": false,
+      "features": [
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:battery_level",
+          "category": "electrical-vehicle-battery",
+          "type": "battery-level",
+          "unit": "percent",
+          "min": 0,
+          "max": 100
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:battery_range",
+          "category": "electrical-vehicle-battery",
+          "type": "battery-range-estimate",
+          "unit": "km",
+          "min": 0,
+          "max": 1500
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:battery_energy",
+          "category": "electrical-vehicle-battery",
+          "type": "battery-energy-remaining",
+          "unit": "kilowatt-hour",
+          "min": 0,
+          "max": 82
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:plugged",
+          "category": "electrical-vehicle-charge",
+          "type": "plugged",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:charging_status",
+          "category": "text",
+          "type": "text",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:charge_power",
+          "category": "electrical-vehicle-charge",
+          "type": "charge-power",
+          "unit": "kilowatt",
+          "min": 0,
+          "max": 400
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:charge_current_limit",
+          "category": "electrical-vehicle-charge",
+          "type": "target-current",
+          "unit": "ampere",
+          "min": 0,
+          "max": 64
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:charge_target",
+          "category": "electrical-vehicle-charge",
+          "type": "target-charge-limit",
+          "unit": "percent",
+          "min": 0,
+          "max": 100
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:charge_time",
+          "category": "duration",
+          "type": "integer",
+          "unit": "minutes",
+          "min": 0,
+          "max": 5000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:average_energy",
+          "category": "electrical-vehicle-consumption",
+          "type": "energy-consumption",
+          "unit": "kilowatt-hour-per-100-km",
+          "min": 0,
+          "max": 100
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:odometer",
+          "category": "electrical-vehicle-state",
+          "type": "odometer",
+          "unit": "km",
+          "min": 0,
+          "max": 2000000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:lock",
+          "category": "electrical-vehicle-command",
+          "type": "lock",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:doors",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:tailgate",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:hood",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:tank_lid",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:windows",
+          "category": "electrical-vehicle-state",
+          "type": "window-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:climate",
+          "category": "electrical-vehicle-climate",
+          "type": "climate-on",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:service_distance",
+          "category": "distance-sensor",
+          "type": "integer",
+          "unit": "km",
+          "min": -100000,
+          "max": 100000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:service_days",
+          "category": "duration",
+          "type": "integer",
+          "unit": "days",
+          "min": -3650,
+          "max": 3650
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:warnings",
+          "category": "text",
+          "type": "text",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:distance_home",
+          "category": "distance-sensor",
+          "type": "decimal",
+          "unit": "km",
+          "min": 0,
+          "max": 20000
+        }
+      ]
+    },
+    "xc90_phev_2024": {
+      "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567",
+      "should_poll": false,
+      "features": [
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:battery_level",
+          "category": "electrical-vehicle-battery",
+          "type": "battery-level",
+          "unit": "percent",
+          "min": 0,
+          "max": 100
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:battery_range",
+          "category": "electrical-vehicle-battery",
+          "type": "battery-range-estimate",
+          "unit": "km",
+          "min": 0,
+          "max": 1500
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:battery_energy",
+          "category": "electrical-vehicle-battery",
+          "type": "battery-energy-remaining",
+          "unit": "kilowatt-hour",
+          "min": 0,
+          "max": 19
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:plugged",
+          "category": "electrical-vehicle-charge",
+          "type": "plugged",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:charging_status",
+          "category": "text",
+          "type": "text",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:charge_time",
+          "category": "duration",
+          "type": "integer",
+          "unit": "minutes",
+          "min": 0,
+          "max": 5000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:fuel_amount",
+          "category": "volume-sensor",
+          "type": "decimal",
+          "unit": "liter",
+          "min": 0,
+          "max": 200
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:fuel_range",
+          "category": "distance-sensor",
+          "type": "integer",
+          "unit": "km",
+          "min": 0,
+          "max": 3000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:average_energy",
+          "category": "electrical-vehicle-consumption",
+          "type": "energy-consumption",
+          "unit": "kilowatt-hour-per-100-km",
+          "min": 0,
+          "max": 100
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:odometer",
+          "category": "electrical-vehicle-state",
+          "type": "odometer",
+          "unit": "km",
+          "min": 0,
+          "max": 2000000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:lock",
+          "category": "electrical-vehicle-command",
+          "type": "lock",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:doors",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:tailgate",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:hood",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:tank_lid",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:windows",
+          "category": "electrical-vehicle-state",
+          "type": "window-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:climate",
+          "category": "electrical-vehicle-climate",
+          "type": "climate-on",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:service_distance",
+          "category": "distance-sensor",
+          "type": "integer",
+          "unit": "km",
+          "min": -100000,
+          "max": 100000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:service_days",
+          "category": "duration",
+          "type": "integer",
+          "unit": "days",
+          "min": -3650,
+          "max": 3650
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:warnings",
+          "category": "text",
+          "type": "text",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:distance_home",
+          "category": "distance-sensor",
+          "type": "decimal",
+          "unit": "km",
+          "min": 0,
+          "max": 20000
+        }
+      ]
+    },
+    "s90_diesel_2018": {
+      "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567",
+      "should_poll": false,
+      "features": [
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:fuel_amount",
+          "category": "volume-sensor",
+          "type": "decimal",
+          "unit": "liter",
+          "min": 0,
+          "max": 200
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:fuel_range",
+          "category": "distance-sensor",
+          "type": "integer",
+          "unit": "km",
+          "min": 0,
+          "max": 3000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:odometer",
+          "category": "electrical-vehicle-state",
+          "type": "odometer",
+          "unit": "km",
+          "min": 0,
+          "max": 2000000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:lock",
+          "category": "electrical-vehicle-command",
+          "type": "lock",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:doors",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:tailgate",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:hood",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:tank_lid",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:windows",
+          "category": "electrical-vehicle-state",
+          "type": "window-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:climate",
+          "category": "electrical-vehicle-climate",
+          "type": "climate-on",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:service_distance",
+          "category": "distance-sensor",
+          "type": "integer",
+          "unit": "km",
+          "min": -100000,
+          "max": 100000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:service_days",
+          "category": "duration",
+          "type": "integer",
+          "unit": "days",
+          "min": -3650,
+          "max": 3650
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:warnings",
+          "category": "text",
+          "type": "text",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:distance_home",
+          "category": "distance-sensor",
+          "type": "decimal",
+          "unit": "km",
+          "min": 0,
+          "max": 20000
+        }
+      ]
+    },
+    "ex30_2024": {
+      "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567",
+      "should_poll": false,
+      "features": [
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:battery_level",
+          "category": "electrical-vehicle-battery",
+          "type": "battery-level",
+          "unit": "percent",
+          "min": 0,
+          "max": 100
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:battery_range",
+          "category": "electrical-vehicle-battery",
+          "type": "battery-range-estimate",
+          "unit": "km",
+          "min": 0,
+          "max": 1500
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:battery_energy",
+          "category": "electrical-vehicle-battery",
+          "type": "battery-energy-remaining",
+          "unit": "kilowatt-hour",
+          "min": 0,
+          "max": 66
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:plugged",
+          "category": "electrical-vehicle-charge",
+          "type": "plugged",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:charging_status",
+          "category": "text",
+          "type": "text",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:charge_target",
+          "category": "electrical-vehicle-charge",
+          "type": "target-charge-limit",
+          "unit": "percent",
+          "min": 0,
+          "max": 100
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:charge_time",
+          "category": "duration",
+          "type": "integer",
+          "unit": "minutes",
+          "min": 0,
+          "max": 5000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:average_energy",
+          "category": "electrical-vehicle-consumption",
+          "type": "energy-consumption",
+          "unit": "kilowatt-hour-per-100-km",
+          "min": 0,
+          "max": 100
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:odometer",
+          "category": "electrical-vehicle-state",
+          "type": "odometer",
+          "unit": "km",
+          "min": 0,
+          "max": 2000000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:lock",
+          "category": "electrical-vehicle-command",
+          "type": "lock",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:doors",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:tailgate",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:hood",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:tank_lid",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:windows",
+          "category": "electrical-vehicle-state",
+          "type": "window-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:climate",
+          "category": "electrical-vehicle-climate",
+          "type": "climate-on",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:service_distance",
+          "category": "distance-sensor",
+          "type": "integer",
+          "unit": "km",
+          "min": -100000,
+          "max": 100000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:service_days",
+          "category": "duration",
+          "type": "integer",
+          "unit": "days",
+          "min": -3650,
+          "max": 3650
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:warnings",
+          "category": "text",
+          "type": "text",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:distance_home",
+          "category": "distance-sensor",
+          "type": "decimal",
+          "unit": "km",
+          "min": 0,
+          "max": 20000
+        }
+      ]
+    },
+    "xc60_phev_2020": {
+      "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567",
+      "should_poll": false,
+      "features": [
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:battery_level",
+          "category": "electrical-vehicle-battery",
+          "type": "battery-level",
+          "unit": "percent",
+          "min": 0,
+          "max": 100
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:battery_range",
+          "category": "electrical-vehicle-battery",
+          "type": "battery-range-estimate",
+          "unit": "km",
+          "min": 0,
+          "max": 1500
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:battery_energy",
+          "category": "electrical-vehicle-battery",
+          "type": "battery-energy-remaining",
+          "unit": "kilowatt-hour",
+          "min": 0,
+          "max": 12
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:plugged",
+          "category": "electrical-vehicle-charge",
+          "type": "plugged",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:charging_status",
+          "category": "text",
+          "type": "text",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:charge_target",
+          "category": "electrical-vehicle-charge",
+          "type": "target-charge-limit",
+          "unit": "percent",
+          "min": 0,
+          "max": 100
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:fuel_amount",
+          "category": "volume-sensor",
+          "type": "decimal",
+          "unit": "liter",
+          "min": 0,
+          "max": 200
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:fuel_range",
+          "category": "distance-sensor",
+          "type": "integer",
+          "unit": "km",
+          "min": 0,
+          "max": 3000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:odometer",
+          "category": "electrical-vehicle-state",
+          "type": "odometer",
+          "unit": "km",
+          "min": 0,
+          "max": 2000000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:lock",
+          "category": "electrical-vehicle-command",
+          "type": "lock",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:doors",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:tailgate",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:hood",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:tank_lid",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:windows",
+          "category": "electrical-vehicle-state",
+          "type": "window-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:climate",
+          "category": "electrical-vehicle-climate",
+          "type": "climate-on",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:service_distance",
+          "category": "distance-sensor",
+          "type": "integer",
+          "unit": "km",
+          "min": -100000,
+          "max": 100000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:service_days",
+          "category": "duration",
+          "type": "integer",
+          "unit": "days",
+          "min": -3650,
+          "max": 3650
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:warnings",
+          "category": "text",
+          "type": "text",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:distance_home",
+          "category": "distance-sensor",
+          "type": "decimal",
+          "unit": "km",
+          "min": 0,
+          "max": 20000
+        }
+      ]
+    },
+    "xc90_petrol_2019": {
+      "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567",
+      "should_poll": false,
+      "features": [
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:fuel_amount",
+          "category": "volume-sensor",
+          "type": "decimal",
+          "unit": "liter",
+          "min": 0,
+          "max": 200
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:fuel_range",
+          "category": "distance-sensor",
+          "type": "integer",
+          "unit": "km",
+          "min": 0,
+          "max": 3000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:odometer",
+          "category": "electrical-vehicle-state",
+          "type": "odometer",
+          "unit": "km",
+          "min": 0,
+          "max": 2000000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:lock",
+          "category": "electrical-vehicle-command",
+          "type": "lock",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:doors",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:tailgate",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:hood",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:tank_lid",
+          "category": "electrical-vehicle-state",
+          "type": "door-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:windows",
+          "category": "electrical-vehicle-state",
+          "type": "window-opened",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:climate",
+          "category": "electrical-vehicle-climate",
+          "type": "climate-on",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:service_distance",
+          "category": "distance-sensor",
+          "type": "integer",
+          "unit": "km",
+          "min": -100000,
+          "max": 100000
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:service_days",
+          "category": "duration",
+          "type": "integer",
+          "unit": "days",
+          "min": -3650,
+          "max": 3650
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:warnings",
+          "category": "text",
+          "type": "text",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "external_id": "ext:volvo:vehicle:YV1ABCDEFG1234567:distance_home",
+          "category": "distance-sensor",
+          "type": "decimal",
+          "unit": "km",
+          "min": 0,
+          "max": 20000
+        }
+      ]
+    }
+  },
+  "manifest": {
+    "config_schema": [
+      "intro",
+      "api_key",
+      "publish_intro",
+      "client_id",
+      "client_secret",
+      "account_intro",
+      "volvo_account",
+      "options_intro",
+      "poll_interval",
+      "home_radius"
+    ],
+    "actions": ["test_connection", "refresh", "disconnect"],
+    "widgets": [
+      {
+        "key": "vehicle",
+        "settings": ["vehicle", "show_buttons"],
+        "button_actions": ["climate_start", "climate_stop", "flash", "lock", "unlock"]
+      }
+    ],
+    "scene_triggers": [
+      {
+        "key": "lock_changed",
+        "fields": ["vehicle", "state"],
+        "variables": ["vehicle_name", "summary"]
+      },
+      {
+        "key": "left_open",
+        "fields": ["vehicle"],
+        "variables": ["vehicle_name", "openings", "summary"]
+      },
+      {
+        "key": "engine_changed",
+        "fields": ["vehicle", "state"],
+        "variables": ["vehicle_name", "summary"]
+      },
+      {
+        "key": "charging_changed",
+        "fields": ["vehicle", "status"],
+        "variables": ["vehicle_name", "status_label", "battery_level", "range_km", "summary"]
+      },
+      {
+        "key": "charger_connection_changed",
+        "fields": ["vehicle", "state"],
+        "variables": ["vehicle_name", "battery_level", "summary"]
+      },
+      {
+        "key": "home_changed",
+        "fields": ["vehicle", "state"],
+        "variables": ["vehicle_name", "distance_km", "summary"]
+      },
+      {
+        "key": "warning_raised",
+        "fields": ["vehicle"],
+        "variables": ["vehicle_name", "warning", "warning_label", "summary"]
+      },
+      {
+        "key": "authorization_expired",
+        "fields": [],
+        "variables": ["summary"]
+      }
+    ],
+    "scene_actions": [
+      {
+        "key": "send_command",
+        "fields": ["vehicle", "command", "runtime_minutes"],
+        "outputs": ["success", "status", "summary"]
+      },
+      {
+        "key": "get_status",
+        "fields": ["vehicle", "refresh"],
+        "outputs": [
+          "vehicle_name",
+          "locked",
+          "all_closed",
+          "openings",
+          "battery_level",
+          "battery_range_km",
+          "fuel_liters",
+          "fuel_range_km",
+          "charging_status",
+          "plugged",
+          "engine_running",
+          "odometer_km",
+          "at_home",
+          "distance_home_km",
+          "latitude",
+          "longitude",
+          "map_url",
+          "warnings",
+          "summary"
+        ]
+      }
+    ]
+  }
+}
