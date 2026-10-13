@@ -98,3 +98,20 @@ test('the four READMEs exist and link to each other', () => {
     }
   }
 });
+
+test('README and docs show the cover and the generated widget illustration of their language', () => {
+  const files = { en: 'README.md', fr: 'README.fr.md', de: 'README.de.md', es: 'README.es.md' };
+  const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
+  for (const language of LANGUAGES) {
+    const image = `docs/assets/widgets.${language}.png`;
+    assert.ok(existsSync(new URL(`../${image}`, import.meta.url)), `${image} is missing`);
+    assert.ok(read(files[language]).includes(`](${image})`), files[language]);
+    assert.ok(read(files[language]).includes('](cover.jpg)'), `${files[language]}: cover`);
+    assert.ok(
+      read(`docs/${language}.md`).includes(
+        `](https://raw.githubusercontent.com/William-De71/gladys-volvo/main/${image})`,
+      ),
+      `docs/${language}.md`,
+    );
+  }
+});

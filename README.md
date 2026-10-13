@@ -5,6 +5,8 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/William-De71/gladys-volvo/release.yml?branch=main&label=CI)](https://github.com/William-De71/gladys-volvo/actions/workflows/release.yml)
 [![Gladys](https://img.shields.io/badge/Gladys-%E2%89%A5%205.1.1-2f6fb5)](https://gladysassistant.com)
 
+![Volvo for Gladys Assistant](cover.jpg)
+
 # Gladys Volvo
 
 Your **Volvo** in [Gladys Assistant](https://gladysassistant.com): battery or fuel, range, charging, lock, doors and
@@ -222,6 +224,8 @@ Honk and flash drained the 12 V battery of some cars: the integration never send
 and range, a status list (lock, openings, charging, engine, position, service, warnings, age of the data) and up to
 four buttons: lock/unlock and flash (both ask first), climate, show on map. Settings: the car, show the buttons.
 
+![Two "Volvo car" widgets: an XC40 electric charging at home (53% battery, 250 km range, everything closed) and an XC90 petrol parked 12 km away with its rear left window open and the climate running — generated illustration, not a screenshot](docs/assets/widgets.en.png)
+
 ## Updating from 1.0.x
 
 - **Nothing is required**: cars, history, scenes and widgets keep working.
@@ -256,6 +260,7 @@ npm test                 # node --test: unit tests, the whole app against the SD
 npm run lint             # ESLint
 npm run format:check     # Prettier
 npx github:GladysAssistant/integration-store . --skip-image-check
+docs/illustrations/render.sh   # widget illustrations (Chrome, ImageMagick, Pillow)
 ```
 
 `index.js` only wires the SDK; the handlers live in `src/app.js`, which `test/app.test.js` drives with the fake

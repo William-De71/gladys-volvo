@@ -5,6 +5,8 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/William-De71/gladys-volvo/release.yml?branch=main&label=CI)](https://github.com/William-De71/gladys-volvo/actions/workflows/release.yml)
 [![Gladys](https://img.shields.io/badge/Gladys-%E2%89%A5%205.1.1-2f6fb5)](https://gladysassistant.com)
 
+![Volvo para Gladys Assistant](cover.jpg)
+
 # Gladys Volvo
 
 Su **Volvo** en [Gladys Assistant](https://gladysassistant.com): batería o combustible, autonomía, carga, bloqueo,
@@ -232,6 +234,8 @@ combustible y autonomía, una lista de estados (bloqueo, aperturas, carga, motor
 antigüedad de los datos) y hasta cuatro botones: bloquear/desbloquear y ráfaga de luces (ambos piden confirmación),
 climatización, ver en el mapa. Ajustes: el coche, mostrar los botones.
 
+![Dos widgets «Coche Volvo»: un XC40 eléctrico cargando en casa (batería al 53 %, 250 km de autonomía, todo cerrado) y un XC90 de gasolina aparcado a 12 km, con la ventanilla trasera izquierda abierta y la climatización en marcha — ilustración generada, no una captura de pantalla](docs/assets/widgets.es.png)
+
 ## Actualización desde la 1.0.x
 
 - **No hace falta nada**: coches, historial, escenas y widgets siguen funcionando.
@@ -267,6 +271,7 @@ npm test                 # node --test: unit tests, the whole app against the SD
 npm run lint             # ESLint
 npm run format:check     # Prettier
 npx github:GladysAssistant/integration-store . --skip-image-check
+docs/illustrations/render.sh   # ilustraciones del widget (Chrome, ImageMagick, Pillow)
 ```
 
 `index.js` solo conecta el SDK; los handlers están en `src/app.js`, que `test/app.test.js` controla con el Gladys

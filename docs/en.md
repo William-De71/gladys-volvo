@@ -128,6 +128,8 @@ Careful with **honk** and **flash**: these commands drained the 12 V battery of 
 
 The **Volvo car** widget shows the picture of your car (exact model and colour), the battery or fuel and the range, then the state: lock, openings, charging, engine, position, service, warnings and the age of the data. Its buttons: **Lock** / **Unlock** (asks first), **Start climate** / **Stop climate**, **Flash lights** (to find the car in a car park, asks first) and **Show on map**. The buttons can be hidden in the widget settings.
 
+![Two "Volvo car" widgets: an XC40 electric charging at home (53% battery, 250 km range, everything closed) and an XC90 petrol parked 12 km away with its rear left window open and the climate running — generated illustration, not a screenshot](https://raw.githubusercontent.com/William-De71/gladys-volvo/main/docs/assets/widgets.en.png)
+
 ## Troubleshooting
 
 | Symptom                                      | Likely cause                                                                                                      |

@@ -128,6 +128,8 @@ Cuidado con **Tocar el claxon** y **Hacer parpadear las luces**: estos comandos 
 
 El widget **Coche Volvo** muestra la foto de su coche (modelo y color exactos), la batería o el combustible y la autonomía, y después el estado: cierre, aperturas, carga, motor, posición, mantenimiento, alertas y la antigüedad de los datos. Sus botones: **Bloquear** / **Desbloquear** (con confirmación), **Climatizar** / **Parar clima**, **Ráfaga de luces** (para encontrar el coche en un aparcamiento, con confirmación) y **Ver en el mapa**. Los botones se pueden ocultar en los ajustes del widget.
 
+![Dos widgets «Coche Volvo»: un XC40 eléctrico cargando en casa (batería al 53 %, 250 km de autonomía, todo cerrado) y un XC90 de gasolina aparcado a 12 km, con la ventanilla trasera izquierda abierta y la climatización en marcha — ilustración generada, no una captura de pantalla](https://raw.githubusercontent.com/William-De71/gladys-volvo/main/docs/assets/widgets.es.png)
+
 ## Solución de problemas
 
 | Síntoma                                                | Causa probable                                                                                                                 |

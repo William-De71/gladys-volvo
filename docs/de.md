@@ -128,6 +128,8 @@ Vorsicht mit **Hupen** und **Lichter blinken lassen**: Diese Befehle haben bei m
 
 Das Widget **Volvo-Fahrzeug** zeigt das Bild Ihres Fahrzeugs (genaues Modell und Farbe), Batterie oder Kraftstoff und die Reichweite, dann den Zustand: Verriegelung, Öffnungen, Laden, Motor, Position, Wartung, Warnungen und das Alter der Daten. Seine Tasten: **Verriegeln** / **Entriegeln** (mit Rückfrage), **Klima an** / **Klima aus**, **Lichtsignal** (um das Fahrzeug auf einem Parkplatz zu finden, mit Rückfrage) und **Auf Karte zeigen**. Die Tasten lassen sich in den Widget-Einstellungen ausblenden.
 
+![Zwei Widgets „Volvo-Fahrzeug“: ein XC40 Elektro, der zu Hause lädt (Batterie 53 %, 250 km Reichweite, alles zu), und ein XC90 Benziner, 12 km entfernt geparkt, Fenster hinten links offen und Klimatisierung an — generierte Illustration, kein Screenshot](https://raw.githubusercontent.com/William-De71/gladys-volvo/main/docs/assets/widgets.de.png)
+
 ## Fehlerbehebung
 
 | Symptom                                                | Wahrscheinliche Ursache                                                                                                           |

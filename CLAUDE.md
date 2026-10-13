@@ -46,6 +46,7 @@ src/transport.js             cloud / unreachable / degraded badge of each car
 src/i18n.js                  runtime texts in en / fr / de / es
 src/config.js                config_schema normalization + internal keys
 .github/scripts/release.mjs  version, changelog, version files, PR title checks
+docs/illustrations/render.sh regenerates the widget illustrations (docs/assets)
 ```
 
 ## Rules
@@ -75,6 +76,9 @@ src/config.js                config_schema normalization + internal keys
   integration's own initiative, only from an explicit user action.
 - **User-facing text** exists in en, fr, de and es: manifest, `src/i18n.js`,
   `docs/*.md`, `README*.md`. `test/i18n.test.js` checks it.
+- **Widget illustrations**: `docs/assets/widgets.<lang>.png` are generated
+  from the widget code by `docs/illustrations/render.sh`: run it again after
+  any change to a widget content, and keep them labelled as illustrations.
 - **Versions belong to the Release workflow**: never edit `version` in
   `package.json`, `package-lock.json` or the manifest, nor the `docker_image`
   tag.

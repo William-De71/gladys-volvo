@@ -128,6 +128,8 @@ Prudence avec **klaxonner** et **faire clignoter** : ces commandes ont déjà vi
 
 Le widget **Voiture Volvo** affiche la photo de votre voiture (modèle et couleur exacts), la batterie ou le carburant et l'autonomie, puis l'état : verrouillage, ouvrants, charge, moteur, position, entretien, alertes et l'âge des données. Ses boutons : **Verrouiller** / **Déverrouiller** (avec confirmation), **Climatiser** / **Arrêter la clim**, **Faire clignoter** (pour retrouver la voiture sur un parking, avec confirmation) et **Voir sur la carte**. Les boutons peuvent être masqués dans les réglages du widget.
 
+![Deux widgets « Voiture Volvo » : un XC40 électrique en charge à la maison (batterie 53 %, 250 km d’autonomie, tout est fermé) et un XC90 essence garé à 12 km, fenêtre arrière gauche ouverte et climatisation en marche — illustration générée, pas une capture d’écran](https://raw.githubusercontent.com/William-De71/gladys-volvo/main/docs/assets/widgets.fr.png)
+
 ## Dépannage
 
 | Symptôme                                            | Cause probable                                                                                                                         |
