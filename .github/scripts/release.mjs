@@ -340,6 +340,10 @@ export function updateChangelog(text, { version, previous, date, commits, repoUr
     if (existing.date === 'unreleased') {
       // The starter section written with the project: date it, keep its text.
       result = text.replace(versionHeading(version), `## [${version}] - ${date}`);
+    } else if (!previous) {
+      // The first release run again: its section is the hand-written starter,
+      // dated by the first run, never compared with generated lines.
+      result = text;
     } else {
       const generated = renderSection(commits, repoUrl);
       const current = text.slice(existing.bodyStart, existing.end).trim();

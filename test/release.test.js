@@ -380,6 +380,32 @@ test('a release with nothing to list still gets a line', () => {
 
 // --- Pull request titles -----------------------------------------------------
 
+test('a starter 0.1.0 section is dated at the first release, never regenerated', () => {
+  const text = [
+    '# Changelog',
+    '',
+    '## [0.1.0] - unreleased',
+    '',
+    '### Added',
+    '',
+    '- Written by hand with the project.',
+    '',
+  ].join('\n');
+  const release = {
+    version: '0.1.0',
+    previous: null,
+    date: '2026-10-14',
+    commits: [commit('feat: add Volvo external integration'), commit('fix: something else')],
+    repoUrl: REPO,
+  };
+  const dated = updateChangelog(text, release);
+  assert.match(dated, /^## \[0\.1\.0\] - 2026-10-14$/m);
+  assert.doesNotMatch(dated, /unreleased/);
+  assert.equal(releaseNotes(dated, '0.1.0'), releaseNotes(text, '0.1.0'), 'nothing generated');
+  assert.ok(dated.endsWith(`[0.1.0]: ${REPO}/releases/tag/v0.1.0\n`));
+  assert.equal(updateChangelog(dated, release), dated, 'idempotent');
+});
+
 test('pull request titles must read as a changelog line', () => {
   assert.deepEqual(titleProblems('feat(widgets): add a dashboard widget for the RF Bridge'), []);
   assert.deepEqual(titleProblems('fix!: drop the e-mail login of the free App IDs'), []);
