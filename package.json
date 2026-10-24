@@ -1,6 +1,6 @@
 {
   "name": "gladys-volvo",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "description": "External Gladys Assistant integration for Volvo cars: battery, fuel, charging, doors and windows, lock, climate, location, scenes and a dashboard widget.",
   "homepage": "https://github.com/William-De71/gladys-volvo",
