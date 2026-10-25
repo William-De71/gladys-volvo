@@ -3,7 +3,7 @@
 [![Licencia: Apache-2.0](https://img.shields.io/badge/licencia-Apache--2.0-blue.svg)](LICENSE)
 [![Última versión](https://img.shields.io/github/v/release/William-De71/gladys-volvo?sort=semver)](https://github.com/William-De71/gladys-volvo/releases)
 [![CI](https://img.shields.io/github/actions/workflow/status/William-De71/gladys-volvo/release.yml?branch=main&label=CI)](https://github.com/William-De71/gladys-volvo/actions/workflows/release.yml)
-[![Gladys](https://img.shields.io/badge/Gladys-%E2%89%A5%205.1.1-2f6fb5)](https://gladysassistant.com)
+[![Gladys](https://img.shields.io/badge/Gladys-%E2%89%A5%205.3.0-2f6fb5)](https://gladysassistant.com)
 
 ![Volvo para Gladys Assistant](cover.jpg)
 
@@ -124,7 +124,7 @@ pruebas grabadas de Home Assistant (`test/fixtures/home-assistant.json`, Apache-
 
 ## Instalación
 
-1. En Gladys (5.1.1 o posterior), abra **Integraciones**, busque **Volvo** en el catálogo e instálela.
+1. En Gladys (5.3.0 o posterior), abra **Integraciones**, busque **Volvo** en el catálogo e instálela.
 2. Siga la [documentación de usuario](docs/es.md): cree y publique una aplicación en el portal de desarrolladores de
    Volvo (unos diez minutos, una sola vez), introduzca su clave y su cliente, haga clic en **Conectar** e inicie sesión
    con su Volvo ID.

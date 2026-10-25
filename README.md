@@ -3,7 +3,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/William-De71/gladys-volvo?sort=semver)](https://github.com/William-De71/gladys-volvo/releases)
 [![CI](https://img.shields.io/github/actions/workflow/status/William-De71/gladys-volvo/release.yml?branch=main&label=CI)](https://github.com/William-De71/gladys-volvo/actions/workflows/release.yml)
-[![Gladys](https://img.shields.io/badge/Gladys-%E2%89%A5%205.1.1-2f6fb5)](https://gladysassistant.com)
+[![Gladys](https://img.shields.io/badge/Gladys-%E2%89%A5%205.3.0-2f6fb5)](https://gladysassistant.com)
 
 ![Volvo for Gladys Assistant](cover.jpg)
 
@@ -120,7 +120,7 @@ not a sign-in problem. Response shapes come from Home Assistant's recorded tests
 
 ## Installation
 
-1. In Gladys (5.1.1 or later), open **Integrations**, find **Volvo** in the catalog and install it.
+1. In Gladys (5.3.0 or later), open **Integrations**, find **Volvo** in the catalog and install it.
 2. Follow the [user documentation](docs/en.md): create and publish an application on the Volvo developer portal
    (about ten minutes, once), enter its key and client, then click **Connect** and sign in with your Volvo ID.
 3. In the **Discovery** tab, add your car.
