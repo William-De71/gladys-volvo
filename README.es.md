@@ -309,9 +309,7 @@ flowchart LR
   que no pueda descargar.
 - Ejecución manual (**Actions → Release → Run workflow**): `release-as` fuerza una versión, `dry-run` muestra la
   versión y las notas sin publicar nada.
-- **`main` protegida**: el job de publicación avanza `main` al commit de versión con el `GITHUB_TOKEN`. Con una regla
-  de protección de rama o un ruleset, permita que GitHub Actions la omita (Settings → Rules → Bypass list), o use un
-  token de GitHub App; de lo contrario, el job `publish` falla e indica cómo terminar a mano.
+- **Rama protegida**: unos rulesets exigen una pull request en `main` y bloquean las etiquetas `v*`; solo pasan el mantenedor y las deploy keys. La publicación hace push con la deploy key del entorno `release` (secreto `RELEASE_DEPLOY_KEY`, solo `main`): una ejecución lanzada desde otra rama nunca la obtiene. `build.yml` y `github-release.yml` no arrancan con una etiqueta: la publicación los llama, o lánzelos a mano (Actions → Run workflow, con `version` para la imagen) para terminar una publicación.
 - El paquete Docker debe ser **público** (Package settings → Change visibility) para que Gladys pueda descargarlo.
 
 ## Contribuir
